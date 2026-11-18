@@ -1,13 +1,9 @@
 /* ==========================================================================
-   Astra Physics — Reconstructed Design System & Tokens
-   Reverse-engineered from https://astra-ai.co/subjects/physics/#how-it-works
-   Evidence IDs:
-   - Browser Capture: ev_1050e7ae3f30701d8f6a6fed0f7142d63cf559c76768e761fff22f7102d36526
-   - JS AST Analysis: ev_0d80f3aa219f590d6016b5008d222a6a743a0f2153d5dfbda0259b9bcf86dd95
+   Astra Physics — Reconstructed Design System & Tokens + Iraqi 6th Scientific Edition
    ========================================================================== */
 
 :root {
-  --font-sans: 'Figtree', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: 'Figtree', 'Cairo', 'Noto Sans Arabic', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-home-bg: #0a0a0a;
@@ -59,6 +55,16 @@ body {
   overflow-x: hidden;
 }
 
+.rtl-block {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr-math {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
 /* Signature Astra Card Shell with Padding-Box Fill + Border-Box Specular Ring */
 .home-card-shell {
   background:
@@ -93,7 +99,7 @@ body {
   border: 1.5px solid transparent;
 }
 
-/* 3D Glassmorphic Section Tile Badge (Module 402030 in 13_0s4lq9-i9f_ga.js) */
+/* 3D Glassmorphic Section Tile Badge */
 .astra-section-badge {
   --badge-edge: rgba(91, 107, 255, 0.95);
   --badge-glow: rgba(91, 107, 255, 0.5);
@@ -146,6 +152,15 @@ body {
   background-image: radial-gradient(86% 70% at 50% 100%, rgba(252, 187, 0, 0.34), rgba(252, 187, 0, 0.12) 40%, transparent 78%);
 }
 
+.astra-section-badge.emerald {
+  --badge-edge: rgba(16, 185, 129, 0.92);
+  --badge-glow: rgba(16, 185, 129, 0.45);
+}
+
+.astra-section-badge.emerald::after {
+  background-image: radial-gradient(86% 70% at 50% 100%, rgba(16, 185, 129, 0.34), rgba(16, 185, 129, 0.12) 40%, transparent 78%);
+}
+
 /* AI Tutor Sphere Orb Animation */
 @keyframes sphereFloat {
   0%, 100% { transform: translateY(0px) scale(1); }
@@ -172,7 +187,7 @@ body {
   animation: pulseRing 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
 }
 
-/* 4-Point Star Flip Button Rotation (Module 230791 in 14_3rwvvap7r0kpx.js) */
+/* 4-Point Star Flip Button Rotation */
 .star-toggle-btn svg {
   transition: transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -208,6 +223,18 @@ body {
   pointer-events: auto;
   transform: translateY(0);
   position: relative;
+}
+
+/* Equation Card Hover Glow */
+.equation-card {
+  background: linear-gradient(180deg, rgba(24, 26, 38, 0.9), rgba(14, 15, 22, 0.95));
+  border: 1px solid rgba(139, 152, 255, 0.18);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.equation-card:hover {
+  border-color: rgba(91, 107, 255, 0.65);
+  transform: translateY(-2px);
 }
 
 /* Custom Scrollbar */
