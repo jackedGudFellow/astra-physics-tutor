@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Physics Tutor with the Most Accurate AI — Astra AI Physics (Operational Edition)</title>
+  <!-- Google Fonts matching reverse-engineered Figtree + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- KaTeX 0.16.11 for real-time Physics equation rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <!-- Tailwind Play CDN + Astra Custom CSS Tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-[#0a0a0a] text-white antialiased selection:bg-[#4353f3] selection:text-white">
+
+  <!-- ====================================================================
+       STICKY HEADER (Reverse-engineered from banner / navigation "Main")
+       ==================================================================== -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-[1224px] items-center justify-between px-6 py-4">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="ai-sphere-orb size-8 rounded-full flex items-center justify-center">
+          <span class="size-2.5 rounded-full bg-white"></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-bold tracking-tight text-white">Astra AI</span>
+          <span class="rounded-full bg-[#4353f3]/20 border border-[#5b6bff]/50 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-[#c9cfff]">PHYSICS LAB</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main" class="hidden md:flex items-center gap-7 text-sm font-medium text-[#8a9bad]">
+        <a href="#learn" class="hover:text-white transition">Learn</a>
+        <a href="#how-it-works" class="text-white font-semibold hover:text-[#c9cfff] transition">How It Works (Live Solver)</a>
+        <a href="#practise" class="hover:text-white transition">Practise Modes</a>
+        <a href="#steps" class="hover:text-white transition">3-Step Method</a>
+        <a href="#research-1" class="hover:text-white transition">Research</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <span id="header-xp-badge" class="hidden sm:inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs font-semibold text-[#c9cfff]">
+          420 XP · 🔥 4d Streak
+        </span>
+        <a href="#how-it-works" class="home-ramp-fill rounded-full px-5 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_6px_24px_rgba(67,83,243,0.45)] hover:brightness-110 transition">
+          Solve a Problem
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         SECTION 0: CAMPAIGN HERO (#campaign-hero-title)
+         ==================================================================== -->
+    <section id="campaign-hero" aria-labelledby="campaign-hero-title" class="relative overflow-hidden px-6 pt-12 pb-16 lg:pt-20 lg:pb-24">
+      <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[420px] w-[780px] rounded-full bg-[#4353f3]/20 blur-[130px]"></div>
+
+      <div class="mx-auto max-w-[1032px] text-center flex flex-col items-center">
+        <!-- Trust pill -->
+        <div class="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs text-[#c9cfff] mb-8">
+          <span class="font-semibold text-white">19,695,000+</span> students already use Astra
+          <span class="text-white/20">|</span>
+          <span class="text-amber-400">★★★★★</span>
+          <span><strong class="text-white">342,000+</strong> five-star ratings</span>
+          <span class="text-white/20">|</span>
+          <span class="font-mono uppercase tracking-wider text-[#8b98ff]">Physics Tutor</span>
+        </div>
+
+        <h1 id="campaign-hero-title" class="text-4xl sm:text-6xl lg:text-[72px] font-semibold tracking-[-0.03em] leading-[1.05] text-balance max-w-4xl mb-6">
+          Physics tutor with the <span class="home-ramp-text">most accurate</span> artificial intelligence
+        </h1>
+
+        <p class="text-base sm:text-lg lg:text-xl text-[#8a9bad] max-w-2xl leading-relaxed mb-8">
+          <strong class="text-white font-semibold">Learn physics with AI-powered tutoring</strong> and get your personal physics tutor today. Instead of just giving the final number, Astra walks you through every vector, free-body diagram, and conservation law step by step.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
+          <a href="#how-it-works" class="home-ramp-fill rounded-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-[0_10px_30px_rgba(67,83,243,0.5)] hover:brightness-110 transition">
+            Try Live Physics Solver ↓
+          </a>
+          <a href="#practise" class="rounded-full border-2 border-white/25 bg-white/5 px-7 py-3.5 text-sm sm:text-base font-semibold text-white hover:bg-white/10 transition">
+            Explore 9 Practice Modes
+          </a>
+        </div>
+
+        <p class="text-xs font-mono uppercase tracking-widest text-[#8a9bad]">
+          ✓ 2 grades higher, or it’s on us &nbsp;·&nbsp;  App of the Day Featured by Apple
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 1: AI TUTOR SPHERE & EXAM PREP COLLECTOR
+         ==================================================================== -->
+    <section class="px-6 py-10">
+      <div class="mx-auto max-w-[1032px] home-card-shell rounded-[38px] p-8 lg:p-12 relative overflow-hidden">
+        <div class="flex flex-col items-center text-center">
+          <div class="relative mb-6 flex items-center justify-center">
+            <span class="ai-sphere-pulse absolute size-24 rounded-full border border-[#5b6bff]/50"></span>
+            <div class="ai-sphere-orb relative size-20 rounded-full flex items-center justify-center">
+              <div class="size-6 rounded-full bg-white/90 blur-[2px]"></div>
+            </div>
+          </div>
+
+          <h2 class="text-2xl lg:text-3xl font-semibold text-white mb-2">
+            Have an exam coming up? <span class="text-[#8b98ff]">Give me everything you’re studying from.</span>
+          </h2>
+          <p class="text-sm text-[#8a9bad] mb-8 max-w-xl">
+            Click any study material below to add it to your active Physics Exam Prep session:
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 w-full">
+            <button type="button" data-exam-resource="Lecture notes & PDFs" class="home-card-shell rounded-2xl p-4 flex flex-col items-center gap-2 text-center hover:border-[#5b6bff] cursor-pointer">
+              <span class="text-2xl">📄</span>
+              <span class="text-xs font-medium text-white">Lecture notes & PDFs</span>
+            </button>
+            <button type="button" data-exam-resource="Photos of your notes" class="home-card-shell rounded-2xl p-4 flex flex-col items-center gap-2 text-center hover:border-[#5b6bff] cursor-pointer">
+              <span class="text-2xl">📸</span>
+              <span class="text-xs font-medium text-white">Photos of your notes</span>
+            </button>
+            <button type="button" data-exam-resource="Your exam date" class="home-card-shell rounded-2xl p-4 flex flex-col items-center gap-2 text-center hover:border-[#5b6bff] cursor-pointer">
+              <span class="text-2xl">📅</span>
+              <span class="text-xs font-medium text-white">Your exam date</span>
+            </button>
+            <button type="button" data-exam-resource="Your target grade" class="home-card-shell rounded-2xl p-4 flex flex-col items-center gap-2 text-center hover:border-[#5b6bff] cursor-pointer">
+              <span class="text-2xl">🎯</span>
+              <span class="text-xs font-medium text-white">Your target grade</span>
+            </button>
+            <button type="button" data-exam-resource="Slides & textbooks" class="home-card-shell rounded-2xl p-4 flex flex-col items-center gap-2 text-center hover:border-[#5b6bff] cursor-pointer">
+              <span class="text-2xl">📚</span>
+              <span class="text-xs font-medium text-white">Slides & textbooks</span>
+            </button>
+            <button type="button" data-exam-resource="Links & articles" class="home-card-shell rounded-2xl p-4 flex flex-col items-center gap-2 text-center hover:border-[#5b6bff] cursor-pointer">
+              <span class="text-2xl">🔗</span>
+              <span class="text-xs font-medium text-white">Links & articles</span>
+            </button>
+          </div>
+
+          <p id="exam-collector-status" class="mt-5 font-mono text-xs text-emerald-400 min-h-[18px]"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: SOCIAL PROOF NUMBERS & IN-PAGE PILL NAVIGATION (#intro-1)
+         ==================================================================== -->
+    <section id="intro-1" aria-labelledby="intro-1-title" class="px-6 py-12 lg:py-16">
+      <div class="mx-auto max-w-[1032px] text-center">
+        <h2 id="intro-1-title" class="text-2xl sm:text-4xl font-semibold text-white mb-4">
+          Loved by students. Trusted by parents. Built to teach physics.
+        </h2>
+        <p class="text-base sm:text-lg text-[#8a9bad] max-w-2xl mx-auto mb-10">
+          Students, parents and teachers use Astra every day for physics homework, tests and exams. It explains each step of a problem, so the principle stays with you long after the answer is found.
+        </p>
+
+        <dl class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+          <div class="home-card-shell rounded-3xl p-6">
+            <dt class="font-mono text-xs uppercase tracking-widest text-[#8a9bad] mb-1">Students</dt>
+            <dd class="text-3xl lg:text-4xl font-bold text-white">19,695,000</dd>
+          </div>
+          <div class="home-card-shell rounded-3xl p-6">
+            <dt class="font-mono text-xs uppercase tracking-widest text-[#8a9bad] mb-1">Parents</dt>
+            <dd class="text-3xl lg:text-4xl font-bold text-white">211,000</dd>
+          </div>
+          <div class="home-card-shell rounded-3xl p-6">
+            <dt class="font-mono text-xs uppercase tracking-widest text-[#8a9bad] mb-1">Teachers</dt>
+            <dd class="text-3xl lg:text-4xl font-bold text-white">286,000</dd>
+          </div>
+        </dl>
+
+        <!-- On This Page Anchor Pill -->
+        <nav aria-label="On this page" class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#14141a] p-1.5 shadow-xl">
+          <a href="#learn" class="rounded-full px-5 py-2 text-xs sm:text-sm font-semibold text-[#c9cfff] hover:bg-white/10 hover:text-white transition">
+            💡 Learn
+          </a>
+          <a href="#how-it-works" class="home-ramp-fill rounded-full px-5 py-2 text-xs sm:text-sm font-semibold text-white shadow">
+            ⚡ See it work (#how-it-works)
+          </a>
+          <a href="#practise" class="rounded-full px-5 py-2 text-xs sm:text-sm font-semibold text-[#c9cfff] hover:bg-white/10 hover:text-white transition">
+            🎯 Practise
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: LEARN (#learn — Expandable Flip Cards + Action Prompts)
+         ==================================================================== -->
+    <section id="learn" aria-labelledby="learn-title" class="flex flex-col gap-12 px-6 py-16 lg:py-24">
+      <div class="mx-auto flex w-full max-w-[1032px] flex-col items-center gap-8 text-center">
+        <!-- 3D Glassmorphic Section Tile Badge -->
+        <div class="astra-section-badge home-card-shell">
+          <span class="font-mono text-xs uppercase tracking-[1.8px] text-white">Learn</span>
+          <span class="mt-auto mb-2 text-4xl">⚛️</span>
+        </div>
+
+        <h2 id="learn-title" class="text-3xl sm:text-5xl lg:text-[60px] font-semibold tracking-[-0.03em] leading-[1.06] text-white">
+          Understand the principle 💡 before the formula.
+        </h2>
+        <p class="text-base sm:text-xl text-[#8a9bad] max-w-2xl">
+          Astra AI won’t just give you the answer. It guides you through every problem, so you understand the physics behind it. <span class="text-white/80">(Click the ✦ icon on any card to flip it!)</span>
+        </p>
+      </div>
+
+      <!-- 3-Column Bento Grid -->
+      <div class="mx-auto grid w-full max-w-[1120px] grid-cols-1 gap-6 lg:grid-cols-3">
+        <!-- Card 1 (Spans 2 cols on desktop) -->
+        <article data-flip-card data-expanded="false" class="bento-flip-card home-card-shell rounded-[38px] relative isolate flex flex-col overflow-hidden min-h-[340px] lg:col-span-2 p-7 lg:p-9">
+          <div class="flex items-center justify-between gap-4 mb-6 z-20">
+            <span class="font-mono uppercase tracking-[0.1em] text-xs text-[#8a9bad]">Step-by-step solutions</span>
+            <button type="button" aria-label="Learn more" aria-expanded="false" class="star-toggle-btn flex size-8 items-center justify-center rounded-lg bg-white/10 text-white hover:bg-white/20 cursor-pointer">
+              <svg viewBox="0 0 200 200" fill="currentColor" class="size-4"><path d="M186.739 94.9503L116.253 83.5702L104.892 12.967C103.24 9.011 96.76 9.011 95.1082 12.967L83.747 83.5702L13.2612 94.9503C11.2812 95.7775 10 97.7078 10 99.8502C10 101.993 11.2812 103.923 13.2612 104.75L83.747 116.13L95.1082 186.733C95.9341 188.717 97.8612 190 100 190C102.139 190 104.066 188.717 104.892 186.733L116.253 116.13L186.739 104.75C188.719 103.923 190 101.993 190 99.8502C190 97.7078 188.719 95.7775 186.739 94.9503Z"></path></svg>
+            </button>
+          </div>
+          <div class="relative flex-1 flex flex-col justify-between">
+            <div class="card-face-front flex flex-col justify-between h-full">
+              <h3 class="text-2xl sm:text-4xl font-semibold text-white max-w-lg leading-tight mb-6">
+                Don’t just get the answer. <span class="text-[#8b98ff]">Get the physics.</span>
+              </h3>
+              <div class="flex flex-wrap gap-2.5 mt-auto">
+                <button type="button" data-tutor-prompt="Projectile launched at 30 m/s at 45 deg" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white hover:border-[#5b6bff] hover:bg-[#4353f3]/20 transition cursor-pointer">
+                  ✦ Solve this projectile problem
+                </button>
+                <button type="button" data-tutor-prompt="Inclined plane 10 kg at 35 deg with friction" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white hover:border-[#5b6bff] hover:bg-[#4353f3]/20 transition cursor-pointer">
+                  ✦ Explain inclined plane forces
+                </button>
+                <button type="button" data-tutor-prompt="Circuit with 24V battery and parallel resistors" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white hover:border-[#5b6bff] hover:bg-[#4353f3]/20 transition cursor-pointer">
+                  ✦ Check my circuit answer
+                </button>
+              </div>
+            </div>
+            <div class="card-face-back flex flex-col justify-center h-full">
+              <p class="text-base lg:text-lg text-[#c9cfff] leading-relaxed mb-4">
+                Upload a photo or type in a problem. Whether it is motion, energy, force or another physics concept, Astra takes you through it one step at a time — verifying your free-body diagram and symbolic formula before computing the final value.
+              </p>
+              <span class="font-mono text-xs text-[#8a9bad]">Click any prompt chip on the front to load it in the solver below!</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article data-flip-card data-expanded="false" class="bento-flip-card home-card-shell rounded-[38px] relative isolate flex flex-col overflow-hidden min-h-[340px] p-7 lg:p-9">
+          <div class="flex items-center justify-between gap-4 mb-6 z-20">
+            <span class="font-mono uppercase tracking-[0.1em] text-xs text-[#8a9bad]">Tailored to you</span>
+            <button type="button" aria-label="Learn more" aria-expanded="false" class="star-toggle-btn flex size-8 items-center justify-center rounded-lg bg-white/10 text-white hover:bg-white/20 cursor-pointer">
+              <svg viewBox="0 0 200 200" fill="currentColor" class="size-4"><path d="M186.739 94.9503L116.253 83.5702L104.892 12.967C103.24 9.011 96.76 9.011 95.1082 12.967L83.747 83.5702L13.2612 94.9503C11.2812 95.7775 10 97.7078 10 99.8502C10 101.993 11.2812 103.923 13.2612 104.75L83.747 116.13L95.1082 186.733C95.9341 188.717 97.8612 190 100 190C102.139 190 104.066 188.717 104.892 186.733L116.253 116.13L186.739 104.75C188.719 103.923 190 101.993 190 99.8502C190 97.7078 188.719 95.7775 186.739 94.9503Z"></path></svg>
+            </button>
+          </div>
+          <div class="relative flex-1 flex flex-col justify-between">
+            <div class="card-face-front flex flex-col justify-between h-full">
+              <h3 class="text-2xl sm:text-3xl font-semibold text-white leading-tight">
+                Your pace.<br /><span class="text-[#8b98ff]">Your level.</span>
+              </h3>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <button type="button" data-tutor-prompt="Rollercoaster loop energy conservation" class="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold text-white hover:border-[#5b6bff] cursor-pointer">
+                  ✦ Explain it again
+                </button>
+                <button type="button" data-tutor-prompt="Rollercoaster loop energy conservation" class="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold text-white hover:border-[#5b6bff] cursor-pointer">
+                  ✦ Give me a harder one
+                </button>
+              </div>
+            </div>
+            <div class="card-face-back flex flex-col justify-center h-full">
+              <p class="text-base text-[#c9cfff] leading-relaxed">
+                Astra adapts to your knowledge. It explains again with visual analogies where you need it, or challenges you with multi-step olympiad/AP extensions when you are ready.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: #how-it-works — FULLY OPERATIONAL AI PHYSICS TUTOR & 2D LAB
+         ==================================================================== -->
+    <section id="how-it-works" aria-labelledby="how-it-works-title" class="relative z-20 px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="font-mono text-xs uppercase tracking-[0.2em] text-[#8b98ff] block mb-3">
+            LIVE INTERACTIVE WORKSPACE · #HOW-IT-WORKS
+          </span>
+          <h2 id="how-it-works-title" class="text-3xl sm:text-5xl font-semibold tracking-[-0.02em] text-white mb-4">
+            See the most accurate AI physics tutor at work
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad]">
+            Watch and interact as Astra AI guides you step by step to the correct solution, explains the physical law behind each step, and simulates the real-time vector mechanics on canvas.
+          </p>
+        </div>
+
+        <!-- Step 1 Bar: Custom Physics Problem Input + Built-in Math Formula Keyboard + Photo Scanner -->
+        <div class="home-card-shell rounded-[32px] p-5 lg:p-7 mb-8">
+          <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 mb-4">
+            <div class="relative flex-1">
+              <input id="custom-physics-input" type="text"
+                placeholder="Type any physics problem (e.g. 'Projectile launched at 30 m/s at 45°' or 'Block 10 kg on 30° incline')..."
+                class="w-full rounded-2xl bg-black/70 border border-white/15 px-4 py-3.5 text-sm sm:text-base text-white placeholder-[#8a9bad]/60 focus:outline-none focus:border-[#5b6bff]" />
+            </div>
+            <div class="flex items-center gap-2.5">
+              <button id="btn-solve-custom" type="button"
+                class="home-ramp-fill rounded-2xl px-6 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:brightness-110 transition cursor-pointer whitespace-nowrap">
+                ⚡ Guide Me Step-by-Step
+              </button>
+              <label class="rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#c9cfff] transition cursor-pointer whitespace-nowrap flex items-center gap-2">
+                <span>📸 Scan Problem</span>
+                <input id="scan-file-input" type="file" accept="image/*" class="hidden" />
+              </label>
+            </div>
+          </div>
+
+          <!-- Built-in Physics & Math Formula Keyboard (from #steps card 1) -->
+          <div class="flex flex-wrap items-center gap-1.5 pt-1">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-[#8a9bad] mr-2">Math & Physics Keyboard:</span>
+            <button type="button" data-math-symbol="v₀ = 25 m/s, θ = 37°" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">v₀, θ</button>
+            <button type="button" data-math-symbol="F_net = m·a" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">F = ma</button>
+            <button type="button" data-math-symbol="E_k = ½mv²" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">½mv²</button>
+            <button type="button" data-math-symbol="μ_k = 0.25" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">μₖ</button>
+            <button type="button" data-math-symbol="g = 9.8 m/s²" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">g = 9.8</button>
+            <button type="button" data-math-symbol="R_eq = R₁ + (R₂∥R₃)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">R_eq Ω</button>
+            <button type="button" data-math-symbol="√(2gh)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">√(2gh)</button>
+            <button type="button" data-math-symbol="sin(θ)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">sin θ</button>
+            <button type="button" data-math-symbol="cos(θ)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer">cos θ</button>
+          </div>
+
+          <p id="scan-ocr-status" class="hidden mt-3 font-mono text-xs text-emerald-400"></p>
+        </div>
+
+        <!-- Preset Physics Curriculum Problems Bar -->
+        <div id="problem-selector-tabs" class="flex flex-wrap items-center gap-2.5 mb-6"></div>
+
+        <!-- Two-Column Interactive Split: Left = Socratic Step-by-Step Solver, Right = Live 2D Vector Simulation -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <!-- Left 7 Cols: Step-by-Step Socratic Tutor -->
+          <div class="lg:col-span-7 home-card-shell rounded-[34px] p-6 lg:p-8">
+            <div id="solver-problem-header" class="mb-6"></div>
+            <div id="solver-steps-list" class="space-y-4"></div>
+          </div>
+
+          <!-- Right 5 Cols: Real-Time 2D Physics Canvas & Parameter Sliders -->
+          <div class="lg:col-span-5 home-card-shell rounded-[34px] p-6 flex flex-col gap-4 lg:sticky lg:top-24">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-[#8b98ff] block">Interactive Physics Sandbox</span>
+                <h3 class="text-base font-semibold text-white">Real-Time Vector & Motion Simulator</h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="btn-sim-play" type="button" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/15 font-mono text-xs text-white cursor-pointer">
+                  ⏸ Pause
+                </button>
+                <button id="btn-sim-reset" type="button" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/15 font-mono text-xs text-[#c9cfff] cursor-pointer">
+                  ↺ Reset
+                </button>
+              </div>
+            </div>
+
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#07080d]">
+              <canvas id="physics-sim-canvas" width="460" height="290" class="w-full h-auto block"></canvas>
+              <div id="sim-live-telemetry" class="bg-black/80 border-t border-white/10 px-3.5 py-2 font-mono text-[11px] text-[#c9cfff] truncate">
+                Initializing physics engine...
+              </div>
+            </div>
+
+            <!-- Live Parameter Sliders -->
+            <div id="sim-sliders-container" class="grid grid-cols-1 gap-2.5"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: PRACTISE (#practise — 9 Interactive Study Modes + Streak)
+         ==================================================================== -->
+    <section id="practise" aria-labelledby="practise-title" class="flex flex-col gap-12 px-6 py-16 lg:py-24">
+      <div class="mx-auto flex w-full max-w-[1032px] flex-col items-center gap-8 text-center">
+        <div class="astra-section-badge warm home-card-shell">
+          <span class="font-mono text-xs uppercase tracking-[1.8px] text-white">Practise</span>
+          <span class="mt-auto mb-2 text-4xl">🎯</span>
+        </div>
+
+        <h2 id="practise-title" class="text-3xl sm:text-5xl lg:text-[60px] font-semibold tracking-[-0.03em] leading-[1.06] text-white">
+          Practise until it 🎯 clicks.
+        </h2>
+        <p class="text-base sm:text-xl text-[#8a9bad] max-w-2xl">
+          Understanding comes from doing. Switch between Flashcards, True/False Concept Checks, and the AI Physics Tutor below.
+        </p>
+      </div>
+
+      <div class="mx-auto grid w-full max-w-[1120px] grid-cols-1 gap-6 lg:grid-cols-2">
+        <!-- Interactive Card A: Practice Questions, Marked (All 9 Astra Study Mode Pills Live) -->
+        <article class="home-card-shell rounded-[38px] p-7 lg:p-9 flex flex-col justify-between gap-6">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h3 class="text-2xl sm:text-3xl font-semibold text-white">
+                Practice questions, <span class="text-[#8b98ff]">marked.</span>
+              </h3>
+              <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">Interactive</span>
+            </div>
+            <p class="text-sm text-[#8a9bad] mb-5">
+              Select a study mode below to test your physics intuition right now:
+            </p>
+
+            <!-- 9 Study Mode Pills from 18_3l3inpv8-ee18.js -->
+            <div class="flex flex-wrap gap-2 mb-5">
+              <button type="button" data-study-mode="quiz" class="px-3.5 py-1.5 rounded-full border text-xs font-semibold transition cursor-pointer">AB/CD Quiz</button>
+              <button type="button" data-study-mode="flashcards" class="px-3.5 py-1.5 rounded-full border text-xs font-semibold transition cursor-pointer">Flashcards</button>
+              <button type="button" data-study-mode="trueFalse" class="px-3.5 py-1.5 rounded-full border text-xs font-semibold transition cursor-pointer">True / False</button>
+              <button type="button" data-study-mode="repetition" class="px-3.5 py-1.5 rounded-full border text-xs font-semibold transition cursor-pointer">Spaced Repetition</button>
+              <button type="button" data-study-mode="chat" class="px-3.5 py-1.5 rounded-full border text-xs font-semibold transition cursor-pointer">Ask AI Tutor Chat</button>
+              <button type="button" data-study-mode="gaps" class="px-3.5 py-1.5 rounded-full border text-xs font-semibold transition cursor-pointer">Knowledge Gaps</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Interactive Stage -->
+          <div id="study-mode-interactive-stage" class="mt-auto"></div>
+        </article>
+
+        <!-- Interactive Card B: Small Wins, Every Day (Streak Tracker) -->
+        <article class="home-card-shell rounded-[38px] p-7 lg:p-9 flex flex-col justify-between gap-6">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-amber-400 block mb-2">Daily Momentum</span>
+            <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-2">
+              Small wins, <span class="text-amber-400">every day.</span>
+            </h3>
+            <p class="text-sm text-[#8a9bad]">
+              A little every day adds up. Complete steps in the solver or toggle your daily study log below to build your physics streak:
+            </p>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-black/50 p-6 flex flex-col items-center text-center gap-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl">🔥</span>
+              <div class="text-left">
+                <div id="streak-count-title" class="text-2xl font-bold text-white">4-day streak</div>
+                <div class="text-xs text-[#8a9bad]">Keep going to unlock the 7-day Physics Mastery badge!</div>
+              </div>
+            </div>
+
+            <div id="streak-days-row" class="grid grid-cols-7 gap-2 w-full"></div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="ai-sphere-orb size-10 rounded-full shrink-0"></div>
+              <div>
+                <div class="text-xs font-semibold text-white">Tutor is listening 24/7</div>
+                <div class="text-xs text-[#8a9bad]">Not sure about a step? Ask a follow-up and Astra tries a different explanation.</div>
+              </div>
+            </div>
+            <a href="#how-it-works" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-xs font-semibold text-white whitespace-nowrap">
+              Ask Now ↑
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: 3 STEPS (#steps — "Step by step to better grades")
+         ==================================================================== -->
+    <section id="steps" aria-labelledby="steps-title" class="px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 id="steps-title" class="text-3xl sm:text-5xl font-semibold text-white mb-4">
+            Step by step to better grades. How does it work?
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad]">
+            From a problem you cannot solve to one you can, in three steps.
+          </p>
+        </div>
+
+        <ol class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <li class="home-card-shell rounded-[34px] p-7 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-[#8b98ff] block mb-3">Step 01</span>
+              <h3 class="text-xl font-semibold text-white mb-3">Upload an image or enter a physics problem.</h3>
+              <p class="text-sm text-[#8a9bad] leading-relaxed">
+                Upload an image from your phone or computer. When you enter physics formulas, the built-in math keyboard helps you enter vectors, Greek symbols, and units effortlessly.
+              </p>
+            </div>
+            <a href="#how-it-works" class="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-[#c9cfff] hover:text-white">
+              Try the Math Keyboard ↑
+            </a>
+          </li>
+
+          <li class="home-card-shell rounded-[34px] p-7 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-[#8b98ff] block mb-3">Step 02</span>
+              <h3 class="text-xl font-semibold text-white mb-3">Solve the problem, step by step.</h3>
+              <p class="text-sm text-[#8a9bad] leading-relaxed">
+                Astra AI guides you through the problem you chose, whether it is motion, energy, force or another physics concept, one step at a time, for a thorough understanding.
+              </p>
+            </div>
+            <a href="#how-it-works" class="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-[#c9cfff] hover:text-white">
+              Try Step-by-Step Guided Mode ↑
+            </a>
+          </li>
+
+          <li class="home-card-shell rounded-[34px] p-7 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-[#8b98ff] block mb-3">Step 03</span>
+              <h3 class="text-xl font-semibold text-white mb-3">Become independent in problem-solving.</h3>
+              <p class="text-sm text-[#8a9bad] leading-relaxed">
+                Over time you build a solid foundation and become independent in solving physics problems, verifying your intuition with real-time simulations.
+              </p>
+            </div>
+            <a href="#practise" class="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-[#c9cfff] hover:text-white">
+              Test Yourself in Practise Mode ↑
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9: SCIENTIFIC RESEARCH (#research-1 — Kestin et al., 2025)
+         ==================================================================== -->
+    <section id="research-1" aria-labelledby="research-1-title" class="px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 id="research-1-title" class="text-3xl sm:text-5xl font-semibold text-white mb-4">
+            What does research tell us about AI and student learning?
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad]">
+            Research into AI tutoring shows promise, but the way it’s used matters. The important question is what students can understand, remember, and do independently afterwards.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <article class="home-card-shell rounded-[32px] p-7">
+            <span class="font-mono text-sm text-[#8b98ff] font-bold block mb-3">01</span>
+            <h3 class="text-xl font-semibold text-white mb-3">The learning happens when they take part.</h3>
+            <p class="text-sm text-[#8a9bad] leading-relaxed">
+              An explanation is a starting point. Trying a step, explaining their reasoning, and tackling another problem give students a chance to turn that explanation into understanding.
+            </p>
+          </article>
+          <article class="home-card-shell rounded-[32px] p-7">
+            <span class="font-mono text-sm text-[#8b98ff] font-bold block mb-3">02</span>
+            <h3 class="text-xl font-semibold text-white mb-3">Getting it right isn’t the same as learning it.</h3>
+            <p class="text-sm text-[#8a9bad] leading-relaxed">
+              Getting something right with help is a start. Returning to it later and trying again without support gives a clearer picture of what they’ve actually learned.
+            </p>
+          </article>
+          <article class="home-card-shell rounded-[32px] p-7">
+            <span class="font-mono text-sm text-[#8b98ff] font-bold block mb-3">03</span>
+            <h3 class="text-xl font-semibold text-white mb-3">How AI helps makes a difference.</h3>
+            <p class="text-sm text-[#8a9bad] leading-relaxed">
+              Studies have found positive, mixed, and negative results. The structure of the activities, the feedback students receive, and the support around them all matter.
+            </p>
+          </article>
+        </div>
+
+        <!-- Harvard Physics RCT Callout Card -->
+        <div class="home-card-shell rounded-[34px] p-7 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <span class="font-mono text-xs uppercase tracking-widest text-emerald-400 block mb-2">Peer-Reviewed Randomized Controlled Trial</span>
+            <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-3">
+              Students learned more than twice as much.
+            </h3>
+            <p class="text-sm sm:text-base text-[#8a9bad] leading-relaxed mb-4">
+              In a peer-reviewed randomized controlled trial (<strong class="text-white">Kestin et al., Scientific Reports, 2025</strong>), university physics students using a purpose-built Socratic AI tutor achieved more than double the learning gains of students in an active-learning classroom — in less time.
+            </p>
+            <a href="https://doi.org/10.1038/s41598-025-97652-6" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#8b98ff] hover:text-white underline">
+              Read the study in Nature Scientific Reports (DOI: 10.1038/s41598-025-97652-6) ↗
+            </a>
+          </div>
+          <div class="w-full lg:w-72 rounded-2xl bg-black/50 border border-white/10 p-5 flex flex-col gap-3">
+            <div class="text-xs font-mono text-[#8a9bad]">Normalized Learning Gain</div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-white font-semibold">AI Physics Tutor</span>
+                <span class="font-mono text-emerald-400 font-bold">2.1× Gain</span>
+              </div>
+              <div class="h-3 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-[88%] home-ramp-fill rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-[#8a9bad]">Active Classroom Lecture</span>
+                <span class="font-mono text-[#8a9bad]">1.0× Baseline</span>
+              </div>
+              <div class="h-3 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-[42%] bg-white/30 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 10: FREQUENTLY ASKED QUESTIONS (#faq)
+         ==================================================================== -->
+    <section id="faq" aria-labelledby="faq-title" class="px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[860px]">
+        <div class="text-center mb-10">
+          <h2 id="faq-title" class="text-3xl sm:text-5xl font-semibold text-white mb-6">
+            Frequently asked questions
+          </h2>
+          <div class="inline-flex rounded-full border border-white/15 bg-[#14141a] p-1.5">
+            <button type="button" data-faq-tab="students" class="rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition cursor-pointer">Students</button>
+            <button type="button" data-faq-tab="parents" class="rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition cursor-pointer">Parents</button>
+            <button type="button" data-faq-tab="teachers" class="rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition cursor-pointer">Teachers</button>
+          </div>
+        </div>
+
+        <div id="faq-accordion-list" class="space-y-3"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="border-t border-white/10 bg-[#070709] px-6 py-12 text-xs text-[#8a9bad]">
+    <div class="mx-auto max-w-[1120px] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="ai-sphere-orb size-6 rounded-full"></div>
+        <span class="font-semibold text-white">Astra AI Physics — Operational Reconstruction</span>
+      </div>
+      <div>
+        Reconstructed from REA runtime & static evidence (<code class="text-[#c9cfff]">ev_1050e7ae...</code> &amp; <code class="text-[#c9cfff]">ev_0d80f3aa...</code>)
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

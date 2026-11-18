@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Astra Physics — Reconstructed Design System & Tokens
+   Reverse-engineered from https://astra-ai.co/subjects/physics/#how-it-works
+   Evidence IDs:
+   - Browser Capture: ev_1050e7ae3f30701d8f6a6fed0f7142d63cf559c76768e761fff22f7102d36526
+   - JS AST Analysis: ev_0d80f3aa219f590d6016b5008d222a6a743a0f2153d5dfbda0259b9bcf86dd95
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-home-bg: #0a0a0a;
+  --color-home-muted: #8a9bad;
+  --color-home-subtle: #a3a3ac;
+  --color-home-blue: #4353f3;
+
+  --ramp-1: #2a6afe;
+  --ramp-2: #4353f3;
+  --ramp-3: #8b98ff;
+  --ramp-4: #ffffff;
+
+  --accent-warm: 74 76 88;
+  --accent-warm-solid: #4a4c58;
+  --accent-cool: 74 76 88;
+  --badge-inner-cool: 91 107 255;
+  --accent-cool-solid: #4a4c58;
+
+  --home-ramp: linear-gradient(90deg, var(--ramp-1), var(--ramp-2) 35%, var(--ramp-3) 65%, var(--ramp-4));
+  --home-ramp-vertical: linear-gradient(180deg, var(--ramp-1), var(--ramp-2) 35%, var(--ramp-3) 70%, var(--ramp-4));
+  --home-progress-vertical: linear-gradient(180deg, #fff, #c9cfff 28%, #8b98ff 58%, #5b6bff 82%, #4353f3);
+  --home-neutral-vertical: linear-gradient(180deg, #24242b, #383944 55%, #4a4c58);
+  --home-badge-ring: linear-gradient(180deg, #24242b, #6d6f7d 55%, #fff);
+
+  --type-heading-weight: 600;
+  --type-heading-leading: 1.06;
+  --type-heading-tracking: -0.03em;
+
+  --home-grid-width: 1120px;
+  --home-grid-gutter: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-home-bg);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-home-bg);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Signature Astra Card Shell with Padding-Box Fill + Border-Box Specular Ring */
+.home-card-shell {
+  background:
+    var(--home-card-fill, linear-gradient(180deg, #1b1b21, #111115)) padding-box,
+    var(--home-card-ring, linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.1))) border-box;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  border: 1px solid transparent;
+  transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.28s ease;
+}
+
+.home-card-shell:hover {
+  --home-card-ring: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.18) 45%, rgba(255, 255, 255, 0.26));
+}
+
+.home-ramp-fill {
+  background-image: linear-gradient(90deg, var(--ramp-1), var(--ramp-2) 45%, #6b78ff);
+  background-origin: border-box;
+}
+
+.home-ramp-text {
+  background-image: linear-gradient(90deg, #ffffff 0%, #c9cfff 28%, #8b98ff 58%, #5b6bff 82%, #4353f3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.home-ramp-border {
+  background:
+    linear-gradient(var(--home-ramp-border-fill, #141417), var(--home-ramp-border-fill, #141417)) padding-box,
+    var(--home-ramp-border-image, var(--home-ramp)) border-box;
+  border: 1.5px solid transparent;
+}
+
+/* 3D Glassmorphic Section Tile Badge (Module 402030 in 13_0s4lq9-i9f_ga.js) */
+.astra-section-badge {
+  --badge-edge: rgba(91, 107, 255, 0.95);
+  --badge-glow: rgba(91, 107, 255, 0.5);
+  --home-card-ring: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.08) 78%, var(--badge-edge));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 132px;
+  height: 132px;
+  border-radius: 30px;
+  padding: 20px 12px 12px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-bottom-width: 3px;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    inset 0 -10px 24px -18px var(--badge-glow),
+    0 18px 36px rgba(0, 0, 0, 0.55);
+}
+
+.astra-section-badge::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -30%;
+  width: 90%;
+  height: 140%;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08), transparent 55%);
+  pointer-events: none;
+}
+
+.astra-section-badge::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 56px;
+  background-image: radial-gradient(86% 70% at 50% 100%, rgba(91, 107, 255, 0.38), rgba(91, 107, 255, 0.14) 40%, transparent 78%);
+  pointer-events: none;
+}
+
+.astra-section-badge.warm {
+  --badge-edge: rgba(252, 187, 0, 0.92);
+  --badge-glow: rgba(252, 187, 0, 0.45);
+}
+
+.astra-section-badge.warm::after {
+  background-image: radial-gradient(86% 70% at 50% 100%, rgba(252, 187, 0, 0.34), rgba(252, 187, 0, 0.12) 40%, transparent 78%);
+}
+
+/* AI Tutor Sphere Orb Animation */
+@keyframes sphereFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.03); }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.92); opacity: 0.75; }
+  70% { transform: scale(1.32); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.ai-sphere-orb {
+  animation: sphereFloat 4.5s ease-in-out infinite;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #99a8ff 22%, #4353f3 58%, #171c54 88%, #090b24 100%);
+  box-shadow:
+    0 0 40px rgba(67, 83, 243, 0.65),
+    0 0 85px rgba(42, 106, 254, 0.35),
+    inset -8px -12px 24px rgba(0, 0, 0, 0.6),
+    inset 6px 8px 18px rgba(255, 255, 255, 0.45);
+}
+
+.ai-sphere-pulse {
+  animation: pulseRing 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+/* 4-Point Star Flip Button Rotation (Module 230791 in 14_3rwvvap7r0kpx.js) */
+.star-toggle-btn svg {
+  transition: transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.star-toggle-btn[aria-expanded="true"] svg {
+  transform: rotate(45deg);
+}
+
+/* Flip Card Front/Back Transition */
+.bento-flip-card .card-face-front,
+.bento-flip-card .card-face-back {
+  transition: opacity 420ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bento-flip-card[data-expanded="false"] .card-face-back {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  position: absolute;
+  inset: 0;
+}
+
+.bento-flip-card[data-expanded="true"] .card-face-front {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-16px);
+  position: absolute;
+  inset: 0;
+}
+
+.bento-flip-card[data-expanded="true"] .card-face-back {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d11;
+}
+::-webkit-scrollbar-thumb {
+  background: #282936;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4353f3;
+}
