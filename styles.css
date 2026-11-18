@@ -1,5 +1,7 @@
 /* ==========================================================================
    Astra Physics — Reconstructed Design System & Tokens + Iraqi 6th Scientific Edition
+   Upgraded with: Exam Prep Planner, Voice Oral & Written Mock Exams,
+   2-Host Topic Podcast, 10-Step Mastery Loop, Lab Challenge HUD & Print Sheet
    ========================================================================== */
 
 :root {
@@ -161,16 +163,48 @@ body {
   background-image: radial-gradient(86% 70% at 50% 100%, rgba(16, 185, 129, 0.34), rgba(16, 185, 129, 0.12) 40%, transparent 78%);
 }
 
+.astra-section-badge.rose {
+  --badge-edge: rgba(244, 63, 94, 0.92);
+  --badge-glow: rgba(244, 63, 94, 0.45);
+}
+
+.astra-section-badge.rose::after {
+  background-image: radial-gradient(86% 70% at 50% 100%, rgba(244, 63, 94, 0.34), rgba(244, 63, 94, 0.12) 40%, transparent 78%);
+}
+
 /* AI Tutor Sphere Orb Animation */
 @keyframes sphereFloat {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-8px) scale(1.03); }
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
 }
 
 @keyframes pulseRing {
-  0% { transform: scale(0.92); opacity: 0.75; }
-  70% { transform: scale(1.32); opacity: 0; }
-  100% { transform: scale(1.35); opacity: 0; }
+  0% {
+    transform: scale(0.92);
+    opacity: 0.75;
+  }
+  70% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes eqBounce {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 22px;
+  }
 }
 
 .ai-sphere-orb {
@@ -183,47 +217,31 @@ body {
     inset 6px 8px 18px rgba(255, 255, 255, 0.45);
 }
 
+.ai-sphere-orb.listening {
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #6ee7b7 24%, #10b981 58%, #064e3b 88%, #022c22 100%);
+  box-shadow:
+    0 0 50px rgba(16, 185, 129, 0.8),
+    0 0 95px rgba(52, 211, 153, 0.45),
+    inset -8px -12px 24px rgba(0, 0, 0, 0.6),
+    inset 6px 8px 18px rgba(255, 255, 255, 0.5);
+}
+
 .ai-sphere-pulse {
-  animation: pulseRing 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  animation: pulseRing 2.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
 }
 
-/* 4-Point Star Flip Button Rotation */
-.star-toggle-btn svg {
-  transition: transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+.podcast-eq-bar {
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #8b98ff, #4353f3);
+  height: 6px;
+  transition: height 0.15s ease;
 }
 
-.star-toggle-btn[aria-expanded="true"] svg {
-  transform: rotate(45deg);
-}
-
-/* Flip Card Front/Back Transition */
-.bento-flip-card .card-face-front,
-.bento-flip-card .card-face-back {
-  transition: opacity 420ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.bento-flip-card[data-expanded="false"] .card-face-back {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(16px);
-  position: absolute;
-  inset: 0;
-}
-
-.bento-flip-card[data-expanded="true"] .card-face-front {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-16px);
-  position: absolute;
-  inset: 0;
-}
-
-.bento-flip-card[data-expanded="true"] .card-face-back {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-  position: relative;
-}
+.podcast-playing .podcast-eq-bar:nth-child(1) { animation: eqBounce 0.6s ease-in-out infinite 0.0s; }
+.podcast-playing .podcast-eq-bar:nth-child(2) { animation: eqBounce 0.5s ease-in-out infinite 0.15s; }
+.podcast-playing .podcast-eq-bar:nth-child(3) { animation: eqBounce 0.7s ease-in-out infinite 0.3s; }
+.podcast-playing .podcast-eq-bar:nth-child(4) { animation: eqBounce 0.55s ease-in-out infinite 0.1s; }
 
 /* Equation Card Hover Glow */
 .equation-card {
@@ -242,13 +260,73 @@ body {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0d0d11;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #282936;
   border-radius: 999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #4353f3;
+}
+
+/* Printable Worksheet Mode for Teachers & Students */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header,
+  footer,
+  #campaign-hero,
+  #exam-prep,
+  #how-it-works,
+  #mastery-journey,
+  #mock-exams,
+  #tutoring-methods,
+  #practise,
+  #faq,
+  .no-print {
+    display: none !important;
+  }
+  #printable-worksheet-area {
+    display: block !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    padding: 24px !important;
+  }
+}
+
+
+/* Printable Worksheet Mode for Teachers & Students */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header,
+  footer,
+  #campaign-hero,
+  #exam-prep,
+  #how-it-works,
+  #mastery-journey,
+  #mock-exams,
+  #tutoring-methods,
+  #practise,
+  #faq,
+  .no-print {
+    display: none !important;
+  }
+  #printable-worksheet-area {
+    display: block !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    padding: 24px !important;
+  }
 }

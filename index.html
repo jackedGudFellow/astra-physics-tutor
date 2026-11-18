@@ -21,8 +21,8 @@
        STICKY HEADER
        ==================================================================== -->
   <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-[1224px] items-center justify-between px-6 py-4">
-      <a href="#" class="flex items-center gap-3 group">
+    <div class="mx-auto flex max-w-[1260px] items-center justify-between px-4 sm:px-6 py-3.5">
+      <a href="#" class="flex items-center gap-3 group shrink-0">
         <div class="ai-sphere-orb size-8 rounded-full flex items-center justify-center">
           <span class="size-2.5 rounded-full bg-white"></span>
         </div>
@@ -32,20 +32,21 @@
         </div>
       </a>
 
-      <nav aria-label="Main" class="hidden md:flex items-center gap-6 text-sm font-medium text-[#8a9bad]">
-        <a href="#syllabus" class="text-white font-semibold hover:text-[#c9cfff] transition">منهج ومعادلات الفصول (1–9)</a>
-        <a href="#how-it-works" class="hover:text-white transition">حل المسائل الوزارية + المحاكي</a>
-        <a href="#tutoring-methods" class="hover:text-white transition">طرق الدراسة وفك الشفرات</a>
-        <a href="#practise" class="hover:text-white transition">مختبر الكلاميات والاختبار</a>
-        <a href="#faq" class="hover:text-white transition">الأسئلة الشائعة</a>
+      <nav aria-label="Main" class="hidden xl:flex items-center gap-5 text-xs lg:text-sm font-medium text-[#8a9bad]">
+        <a href="#exam-prep" class="hover:text-white transition">خطة الإنقاذ الوزارية</a>
+        <a href="#syllabus" class="text-white font-semibold hover:text-[#c9cfff] transition">المنهج + البودكاست</a>
+        <a href="#how-it-works" class="hover:text-white transition">حلال المسائل + المختبر</a>
+        <a href="#mock-exams" class="text-amber-300 font-semibold hover:text-amber-200 transition">🎤 الامتحان الشفهي والتحريري</a>
+        <a href="#mastery-journey" class="hover:text-white transition">رادار نقاط الضعف</a>
+        <a href="#companion-hub" class="hover:text-white transition">الأهل والمدرسون</a>
       </nav>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5">
         <span id="header-xp-badge" class="hidden sm:inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs font-semibold text-[#c9cfff]">
           450 XP · 🔥 4d Streak
         </span>
-        <a href="#how-it-works" class="home-ramp-fill rounded-full px-5 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_6px_24px_rgba(67,83,243,0.45)] hover:brightness-110 transition">
-          ابدأ حل المسائل الوزارية
+        <a href="#mock-exams" class="home-ramp-fill rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_6px_24px_rgba(67,83,243,0.45)] hover:brightness-110 transition">
+          امتحن وزاري الآن
         </a>
       </div>
     </div>
@@ -55,45 +56,161 @@
     <!-- ====================================================================
          SECTION 0: CAMPAIGN HERO (#campaign-hero-title)
          ==================================================================== -->
-    <section id="campaign-hero" aria-labelledby="campaign-hero-title" class="relative overflow-hidden px-6 pt-12 pb-16 lg:pt-20 lg:pb-24">
+    <section id="campaign-hero" aria-labelledby="campaign-hero-title" class="relative overflow-hidden px-6 pt-12 pb-14 lg:pt-16 lg:pb-20">
       <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[420px] w-[780px] rounded-full bg-[#4353f3]/20 blur-[130px]"></div>
 
-      <div class="mx-auto max-w-[1032px] text-center flex flex-col items-center">
+      <div class="mx-auto max-w-[1060px] text-center flex flex-col items-center">
         <!-- Trust pill -->
-        <div class="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs text-[#c9cfff] mb-8">
-          <span class="font-semibold text-white">المنهج العراقي المعتمد 2026</span>
+        <div class="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs text-[#c9cfff] mb-6">
+          <span class="font-semibold text-white">تحديث Astra AI الشامل 2026</span>
           <span class="text-white/20">|</span>
           <span class="text-amber-400">★★★★★</span>
-          <span><strong class="text-white">8 فصول كاملة</strong> (المتسعات ← النووية)</span>
-          <span class="text-white/20">|</span>
-          <span class="font-mono uppercase tracking-wider text-[#8b98ff]">Sixth Grade Scientific Physics</span>
+          <span><strong class="text-white">امتحان شفهي صوتي + ورقة وزارية + بودكاست الفصول + رادار الإتقان</strong></span>
         </div>
 
-        <h1 id="campaign-hero-title" class="text-4xl sm:text-6xl lg:text-[68px] font-bold tracking-[-0.02em] leading-[1.15] text-balance max-w-4xl mb-6">
+        <h1 id="campaign-hero-title" class="text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-[-0.02em] leading-[1.15] text-balance max-w-4xl mb-5">
           مدرب فيزياء <span class="home-ramp-text">السادس العلمي</span> بالذكاء الاصطناعي والمحاكاة الحية
         </h1>
 
-        <p class="text-base sm:text-lg lg:text-xl text-[#8a9bad] max-w-2xl leading-relaxed mb-8">
-          <strong class="text-white font-semibold">طريقك للـ 100 في الامتحان الوزاري:</strong> أطلس كامل لجميع قوانين الفصول الثمانية، حل المسائل الوزارية خطوة بخطوة مع فحص الوحدات، محاكيات بصرية للمتسعات والرنين وشقي يونغ، ومختبر "ماذا يحصل لو؟" للكلاميات والتعاليل.
+        <p class="text-base sm:text-lg lg:text-xl text-[#8a9bad] max-w-3xl leading-relaxed mb-8">
+          <strong class="text-white font-semibold">منصة متكاملة للدرجة الكاملة (100/100):</strong> خطة إنقاذ للعد التنازلي للامتحان الوزاري، بودكاست صوتي تفاعلي لكل فصل، حلال فوري لأي مسألة تكتبها بأرقامك، مختبر "تحدي الاكتشاف" الحي، وامتحان شفهي بالمايكروفون + امتحان تحريري وزاري مؤقت.
         </p>
 
-        <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
-          <a href="#syllabus" class="home-ramp-fill rounded-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-[0_10px_30px_rgba(67,83,243,0.5)] hover:brightness-110 transition">
-            تصفح فصول المنهج والمعادلات ↓
+        <div class="flex flex-wrap items-center justify-center gap-3.5 mb-6">
+          <a href="#exam-prep" class="home-ramp-fill rounded-full px-6 py-3.5 text-sm sm:text-base font-semibold text-white shadow-[0_10px_30px_rgba(67,83,243,0.5)] hover:brightness-110 transition">
+            🚀 صمم خطة الإنقاذ للامتحان الوزاري
           </a>
-          <a href="#how-it-works" class="rounded-full border-2 border-white/25 bg-white/5 px-7 py-3.5 text-sm sm:text-base font-semibold text-white hover:bg-white/10 transition">
-            جرب حلال المسائل الوزارية (#how-it-works)
+          <a href="#mock-exams" class="rounded-full border-2 border-amber-400/50 bg-amber-500/10 px-6 py-3.5 text-sm sm:text-base font-semibold text-amber-300 hover:bg-amber-500/20 transition">
+            🎤 جرب الامتحان الشفهي الصوتي والتحريري
+          </a>
+          <a href="#how-it-works" class="rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm sm:text-base font-semibold text-white hover:bg-white/10 transition">
+            ⚡ حلال المسائل + المختبر التفاعلي
+          </a>
+          <a href="./astra-ai-reverse-engineered.zip" download class="rounded-full border border-emerald-400/50 bg-emerald-500/15 px-6 py-3.5 text-sm sm:text-base font-semibold text-emerald-300 hover:bg-emerald-500/25 transition">
+            📦 تحميل الكود المصدري المضغوط (.ZIP)
           </a>
         </div>
 
         <p class="text-xs font-mono uppercase tracking-widest text-[#8a9bad]">
-          ✓ مطابق لتكييفات وزارة التربية العراقية &nbsp;·&nbsp; ✓ مسائل وزارية + كلاميات + اشتقاقات
+          ✓ 10 مراحل إتقان لكل فصل &nbsp;·&nbsp; ✓ بودكاست حواري (الأستاذ والطالب) &nbsp;·&nbsp; ✓ تصدير ملزمة وورقة امتحان PDF
         </p>
       </div>
     </section>
 
     <!-- ====================================================================
-         SECTION 1: IRAQI 6TH SCIENTIFIC SYLLABUS & EQUATIONS ATLAS (#syllabus)
+         UPGRADE 1: "PANIC-TO-READY" EXAM COUNTDOWN & STUDY PLANNER (#exam-prep)
+         ==================================================================== -->
+    <section id="exam-prep" aria-labelledby="exam-prep-title" class="px-6 py-14 lg:py-20">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="flex flex-col items-center text-center mb-10">
+          <div class="astra-section-badge rose home-card-shell mb-5">
+            <span class="font-mono text-xs uppercase tracking-[1.8px] text-white">Exam Prep</span>
+            <span class="mt-auto mb-2 text-4xl">⏳</span>
+          </div>
+          <h2 id="exam-prep-title" class="text-3xl sm:text-5xl font-bold text-white mb-3">
+            من التوتر إلى الجاهزية الكاملة <span class="home-ramp-text">قبل يوم الامتحان الوزاري</span>
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad] max-w-2xl">
+            حدد عدد الأيام المتبقية للامتحان الوزاري ودرجتك المستهدفة، وارفع ملازمك أو اختر مصادر دراستك ليقوم Astra بتوزيع الفصول الثمانية حسب ثقلها الوزاري يومياً:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <!-- Left 5 Cols: Countdown Config & Grounding Sources -->
+          <div class="lg:col-span-5 home-card-shell rounded-[34px] p-6 lg:p-8 rtl-block flex flex-col justify-between gap-6">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="font-mono text-xs uppercase tracking-wider text-rose-400 bg-rose-500/10 border border-rose-500/30 px-3 py-1 rounded-full">
+                  خطة الإنقاذ الوزارية · Exam Planner
+                </span>
+                <span id="planner-readiness-pill" class="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
+                  الجاهزية الحالية: 64%
+                </span>
+              </div>
+
+              <!-- Days until exam & target score controls -->
+              <div class="space-y-4 mb-6">
+                <div class="rounded-2xl bg-black/50 border border-white/10 p-4">
+                  <div class="flex items-center justify-between text-xs sm:text-sm mb-2">
+                    <span class="text-[#8a9bad] font-semibold">📅 الأيام المتبقية للامتحان الوزاري:</span>
+                    <span id="planner-days-label" class="font-mono font-bold text-white text-base">21 يوم</span>
+                  </div>
+                  <input id="planner-days-slider" type="range" min="7" max="60" step="1" value="21" class="w-full accent-[#4353f3] cursor-pointer" />
+                  <div class="flex justify-between font-mono text-[11px] text-[#8a9bad] mt-1 ltr-math">
+                    <span>7d (مراجعة مركزة)</span>
+                    <span>21d (خطة مثالية)</span>
+                    <span>60d (شمولية)</span>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl bg-black/50 border border-white/10 p-4">
+                  <div class="flex items-center justify-between text-xs sm:text-sm mb-2">
+                    <span class="text-[#8a9bad] font-semibold">🎯 الدرجة الوزارية المستهدفة:</span>
+                    <span id="planner-target-label" class="font-mono font-bold text-amber-400 text-base">100 / 100</span>
+                  </div>
+                  <input id="planner-target-slider" type="range" min="70" max="100" step="5" value="100" class="w-full accent-amber-400 cursor-pointer" />
+                </div>
+              </div>
+
+              <!-- Study Materials Grounding -->
+              <div class="mb-4">
+                <div class="text-xs font-bold text-white mb-2.5">📎 اربط مصادر دراستك لتوليد الخطة منها:</div>
+                <div id="planner-sources-grid" class="grid grid-cols-2 gap-2"></div>
+              </div>
+            </div>
+
+            <!-- Upload custom PDF / photo of notes -->
+            <div class="rounded-2xl border border-dashed border-white/20 bg-white/[0.02] p-4 text-center">
+              <label class="cursor-pointer flex flex-col items-center gap-1.5">
+                <span class="text-xs sm:text-sm font-semibold text-[#c9cfff]">📤 ارفع ملزمة PDF أو صورة دفتر ملاحظاتك</span>
+                <span class="text-[11px] text-[#8a9bad]">يدعم: ملازم الفصول، دفاتر الواجبات، نسخ الأسئلة الوزارية</span>
+                <input id="planner-upload-input" type="file" accept=".pdf,image/*,.txt" class="hidden" />
+              </label>
+              <p id="planner-upload-status" class="hidden mt-2 font-mono text-xs text-emerald-400"></p>
+            </div>
+          </div>
+
+          <!-- Right 7 Cols: Readiness Trajectory & Day-by-Day Interactive Mission Schedule -->
+          <div class="lg:col-span-7 home-card-shell rounded-[34px] p-6 lg:p-8 rtl-block flex flex-col justify-between gap-5">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="text-xl lg:text-2xl font-bold text-white">مسار الوصول إلى الـ 100 وجدول المهام اليومية</h3>
+                  <p class="text-xs sm:text-sm text-[#8a9bad]">أكمل مهام اليوم لرفع مؤشر الجاهزية للامتحان الوزاري:</p>
+                </div>
+                <button id="btn-regenerate-plan" type="button" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-xs font-semibold text-[#c9cfff] cursor-pointer">
+                  🔄 إعادة موازنة الجدول
+                </button>
+              </div>
+
+              <!-- Visual Readiness Trajectory Bar -->
+              <div class="rounded-2xl bg-black/60 border border-white/10 p-4 mb-5">
+                <div class="flex items-center justify-between text-xs mb-2">
+                  <span class="text-[#8a9bad]">تقدم الجاهزية الوزارية الكلي</span>
+                  <span id="planner-trajectory-text" class="font-mono text-emerald-400 font-bold">64% ← 100% قبل يوم الامتحان</span>
+                </div>
+                <div class="w-full h-3.5 rounded-full bg-white/10 overflow-hidden p-0.5">
+                  <div id="planner-trajectory-bar" class="h-full rounded-full home-ramp-fill transition-all duration-500" style="width: 64%"></div>
+                </div>
+              </div>
+
+              <!-- Daily Missions List -->
+              <div id="planner-missions-list" class="space-y-3 max-h-[360px] overflow-y-auto pr-1"></div>
+            </div>
+
+            <div class="rounded-2xl bg-[#4353f3]/15 border border-[#5b6bff]/40 p-4 flex flex-wrap items-center justify-between gap-3">
+              <div class="text-xs sm:text-sm text-white">
+                <strong class="text-[#c9cfff]">💡 نصيحة Astra الذكية:</strong> الفصول (1، 2، 3) تشكل وحدها <strong>70 درجة</strong> في ورقة الامتحان الوزاري قبل الترك!
+              </div>
+              <a href="#syllabus" class="px-4 py-2 rounded-xl home-ramp-fill text-xs font-semibold text-white">ابدأ الفصل المجدول ←</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 1: IRAQI 6TH SCIENTIFIC SYLLABUS, 10-STEP LOOP & TOPIC PODCAST (#syllabus)
          ==================================================================== -->
     <section id="syllabus" aria-labelledby="syllabus-title" class="px-6 py-16 lg:py-24">
       <div class="mx-auto max-w-[1120px]">
@@ -103,15 +220,21 @@
             <span class="mt-auto mb-2 text-4xl">📘</span>
           </div>
           <h2 id="syllabus-title" class="text-3xl sm:text-5xl font-bold text-white mb-4">
-            منهج ومعادلات فيزياء السادس العلمي (الفصول 1 – 9)
+            منهج ومعادلات وبودكاست الفصول (1 – 9)
           </h2>
           <p class="text-base sm:text-lg text-[#8a9bad] max-w-2xl">
-            اختر أي فصل من فصول الكتاب لاستعراض جميع قوانينه الرياضية، وحدات القياس، والملاحظات الذهبية الخاصة بالأسئلة الوزارية:
+            اختر أي فصل لاستعراض <strong class="text-white">حلقة الإتقان ذات الـ 10 مراحل</strong>، الاستماع إلى <strong class="text-white">بودكاست الفصل الحواري</strong>، ومراجعة جميع القوانين والملاحظات الذهبية:
           </p>
         </div>
 
         <!-- Chapter Selector Pills -->
-        <div id="syllabus-chapter-tabs" class="flex flex-wrap items-center justify-center gap-2.5 mb-8"></div>
+        <div id="syllabus-chapter-tabs" class="flex flex-wrap items-center justify-center gap-2.5 mb-6"></div>
+
+        <!-- UPGRADE 3A: 10-Stage Chapter Mastery Loop Bar -->
+        <div id="chapter-10step-loop" class="mb-6"></div>
+
+        <!-- UPGRADE 3B: 2-Host Conversational Arabic Physics Podcast Player -->
+        <div id="chapter-podcast-player" class="mb-6"></div>
 
         <!-- Active Chapter Equations & Golden Rules Display -->
         <div id="syllabus-chapter-detail"></div>
@@ -120,36 +243,43 @@
 
     <!-- ====================================================================
          SECTION 2: #how-it-works — MINISTERIAL STEP-BY-STEP SOLVER & 2D LAB
+         (UPGRADED WITH DYNAMIC CUSTOM PROBLEM PARSER & LAB CHALLENGE HUD)
          ==================================================================== -->
     <section id="how-it-works" aria-labelledby="how-it-works-title" class="relative z-20 px-6 py-16 lg:py-24">
       <div class="mx-auto max-w-[1120px]">
         <div class="text-center max-w-3xl mx-auto mb-10">
           <span class="font-mono text-xs uppercase tracking-[0.2em] text-[#8b98ff] block mb-3">
-            LIVE MINISTERIAL SOLVER &amp; SIMULATOR · #HOW-IT-WORKS
+            LIVE MINISTERIAL SOLVER &amp; CHALLENGE LAB · #HOW-IT-WORKS
           </span>
           <h2 id="how-it-works-title" class="text-3xl sm:text-5xl font-bold tracking-[-0.02em] text-white mb-4">
-            حل المسائل الوزارية خطوة بخطوة مع المحاكاة الحية
+            حلال المسائل الوزارية الذكي + مختبر تحدي الاكتشاف
           </h2>
           <p class="text-base sm:text-lg text-[#8a9bad]">
-            شاهد كيف يقودك Astra AI خطوة بخطوة من قراءة المعطيات وتحويل الوحدات (μF, nm, eV) إلى كتابة القانون الوزاري والتعويض، مع محاكاة تفاعلية حية لكل تجربة.
+            الصق <strong class="text-white">أي مسألة فيزياء بأرقامك الخاصة</strong> ليقوم المحلل بتفكيك المعطيات وبناء خطوات الحل الوزاري فوراً، أو خض <strong class="text-amber-300">تحدي المختبر (Find It)</strong> داخل المحاكي الحي!
           </p>
         </div>
 
-        <!-- Step 1 Bar: Custom Physics Problem Input + Iraqi 6th Grade Formula Keyboard + Photo Scanner -->
+        <!-- UPGRADE 5: Custom Physics Problem Input with Dynamic Number Parser -->
         <div class="home-card-shell rounded-[32px] p-5 lg:p-7 mb-8 rtl-block">
+          <div class="flex items-center justify-between gap-2 mb-2.5">
+            <span class="text-xs font-bold text-[#c9cfff]">✍️ اكتب أو الصق أي مسألة وزارية بأرقامك (يدعم التوليد التلقائي بالـ Parser):</span>
+            <button id="btn-sample-custom-prob" type="button" class="text-xs font-mono text-amber-300 hover:underline cursor-pointer">
+              ✨ جرب مسألة بأرقام جديدة (مثال تلقائي)
+            </button>
+          </div>
           <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 mb-4">
             <div class="relative flex-1">
               <input id="custom-physics-input" type="text"
-                placeholder="اكتب موضوع المسألة الوزارية (مثال: 'متسعتان على التوازي مع عازل' أو 'دائرة تيار متناوب في حالة رنين' أو 'تجربة شقي يونغ')..."
+                placeholder="مثال: متسعتان 6 μF و 12 μF على التوازي مع بطارية 30 V وأدخل عازل k = 3 ... أو: ملف L = 0.5 H و R = 25 Ω و V = 150 V..."
                 class="w-full rounded-2xl bg-black/70 border border-white/15 px-4 py-3.5 text-sm sm:text-base text-white placeholder-[#8a9bad]/60 focus:outline-none focus:border-[#5b6bff]" />
             </div>
             <div class="flex items-center gap-2.5">
               <button id="btn-solve-custom" type="button"
                 class="home-ramp-fill rounded-2xl px-6 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:brightness-110 transition cursor-pointer whitespace-nowrap">
-                ⚡ ابدأ الحل خطوة بخطوة
+                ⚡ حلل المسألة وحلها خطوة بخطوة
               </button>
               <label class="rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#c9cfff] transition cursor-pointer whitespace-nowrap flex items-center gap-2">
-                <span>📸 امسح صورة سؤال وزاري</span>
+                <span>📸 امسح صورة سؤال</span>
                 <input id="scan-file-input" type="file" accept="image/*" class="hidden" />
               </label>
             </div>
@@ -158,9 +288,9 @@
           <!-- Iraqi 6th Grade Physics Formula Keyboard -->
           <div class="flex flex-wrap items-center gap-1.5 pt-1">
             <span class="font-mono text-[11px] uppercase tracking-wider text-[#8a9bad] ml-2">لوحة قوانين السادس العلمي:</span>
-            <button type="button" data-math-symbol="متسعتان على التوازي C_k = k·C" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">C = Q / ΔV</button>
+            <button type="button" data-math-symbol="متسعتان 6 μF و 12 μF على التوازي مع بطارية 30 V وعازل k=3" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">C = Q / ΔV</button>
             <button type="button" data-math-symbol="متسعة الطاقة المختزنة PE = ½C(ΔV)²" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">PE = ½C(ΔV)²</button>
-            <button type="button" data-math-symbol="معادلة الدائرة الحثية وملف الحث الذاتي" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">V_app = I_inst·R + L(ΔI/Δt)</button>
+            <button type="button" data-math-symbol="ملف معامل حثه L = 0.5 H ومقاومته R = 25 Ω وفولتية V = 150 V عند 80%" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">V_app = I_inst·R + L(ΔI/Δt)</button>
             <button type="button" data-math-symbol="دائرة تيار متناوب في حالة رنين Z = R" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">Z = √(R² + (X_L - X_C)²)</button>
             <button type="button" data-math-symbol="تردد الرنين الكهربائي وعامل النوعية" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">f_r = 1 / (2π√(LC))</button>
             <button type="button" data-math-symbol="تجربة شقي يونغ وفاصلة الهدب" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 font-mono text-xs text-[#c9cfff] cursor-pointer ltr-math">Δy = λL / d</button>
@@ -174,7 +304,7 @@
         <!-- Preset Ministerial Problems Bar -->
         <div id="problem-selector-tabs" class="flex flex-wrap items-center justify-center gap-2.5 mb-6"></div>
 
-        <!-- Two-Column Interactive Split: Left = Socratic Step-by-Step Solver, Right = Live 2D Chapter Simulation -->
+        <!-- Two-Column Interactive Split: Left = Socratic Step-by-Step Solver, Right = Live 2D Chapter Simulation + Challenge HUD -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <!-- Left 7 Cols: Step-by-Step Socratic Tutor -->
           <div class="lg:col-span-7 home-card-shell rounded-[34px] p-6 lg:p-8">
@@ -182,32 +312,150 @@
             <div id="solver-steps-list" class="space-y-4"></div>
           </div>
 
-          <!-- Right 5 Cols: Real-Time 2D Physics Canvas & Parameter Sliders -->
+          <!-- Right 5 Cols: Real-Time 2D Physics Canvas, Lab Challenge HUD & Contextual Tutor -->
           <div class="lg:col-span-5 home-card-shell rounded-[34px] p-6 flex flex-col gap-4 lg:sticky lg:top-24">
             <div class="flex items-center justify-between rtl-block">
               <div>
-                <span class="font-mono text-[11px] uppercase tracking-wider text-[#8b98ff] block">المختبر الافتراضي للسادس العلمي</span>
-                <h3 class="text-base font-bold text-white">محاكي التجارب والمتجهات الحي</h3>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-[#8b98ff] block">Astra Interactive Lab HUD</span>
+                <h3 class="text-base font-bold text-white">محاكي التجارب + تحدي المختبر</h3>
               </div>
-              <div class="flex items-center gap-2">
-                <button id="btn-sim-play" type="button" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/15 font-mono text-xs text-white cursor-pointer">
-                  ⏸ إيقاف مؤقت
+              <!-- Lab Mode Switcher: Explore vs Challenge -->
+              <div class="inline-flex rounded-xl bg-black/60 border border-white/10 p-1">
+                <button id="btn-lab-mode-explore" type="button" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-[#4353f3] text-white cursor-pointer">
+                  🔍 استكشاف
                 </button>
-                <button id="btn-sim-reset" type="button" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/15 font-mono text-xs text-[#c9cfff] cursor-pointer">
-                  ↺ إعادة
+                <button id="btn-lab-mode-challenge" type="button" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold text-amber-300 hover:bg-white/5 cursor-pointer">
+                  🎯 تحدي المختبر
                 </button>
               </div>
             </div>
 
+            <!-- UPGRADE 4A: Lab Challenge Banner ("Find It / Set Parameters") -->
+            <div id="lab-challenge-banner" class="hidden rounded-2xl border border-amber-400/40 bg-amber-500/10 p-3.5 rtl-block">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-mono text-[11px] font-bold text-amber-300 uppercase">🎯 مهمة المختبر النشطة (Find It Challenge)</span>
+                <span id="lab-challenge-status" class="font-mono text-[11px] px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200">قيد المحاولة...</span>
+              </div>
+              <p id="lab-challenge-prompt" class="text-xs text-white leading-relaxed"></p>
+            </div>
+
             <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#07080d]">
               <canvas id="physics-sim-canvas" width="460" height="290" class="w-full h-auto block"></canvas>
-              <div id="sim-live-telemetry" class="bg-black/80 border-t border-white/10 px-3.5 py-2 font-mono text-[11px] text-[#c9cfff] truncate ltr-math">
-                Initializing physics engine...
+              <!-- Floating Bottom Pill inside Canvas -->
+              <div class="flex items-center justify-between bg-black/85 border-t border-white/10 px-3 py-2 gap-2">
+                <div id="sim-live-telemetry" class="font-mono text-[11px] text-[#c9cfff] truncate ltr-math">
+                  Initializing physics engine...
+                </div>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <button id="btn-sim-speed" type="button" class="px-2 py-1 rounded-lg bg-white/10 hover:bg-white/15 font-mono text-[10px] text-amber-300 cursor-pointer">
+                    1x
+                  </button>
+                  <button id="btn-sim-play" type="button" class="px-2 py-1 rounded-lg bg-white/10 hover:bg-white/15 font-mono text-[10px] text-white cursor-pointer">
+                    ⏸
+                  </button>
+                  <button id="btn-sim-reset" type="button" class="px-2 py-1 rounded-lg bg-white/10 hover:bg-white/15 font-mono text-[10px] text-[#c9cfff] cursor-pointer">
+                    ↺
+                  </button>
+                </div>
               </div>
             </div>
 
             <!-- Live Parameter Sliders -->
             <div id="sim-sliders-container" class="grid grid-cols-1 gap-2.5"></div>
+
+            <!-- UPGRADE 4B: Contextual "Ask the Tutor About Current Simulation State" -->
+            <button id="btn-ask-tutor-sim" type="button"
+              class="w-full rounded-2xl border border-[#5b6bff]/50 bg-[#4353f3]/15 hover:bg-[#4353f3]/25 px-4 py-3 text-xs sm:text-sm font-semibold text-[#c9cfff] flex items-center justify-center gap-2 transition cursor-pointer rtl-block">
+              <span>💬 اسأل المدرب الذكي عن قراءات التجربة الحالية على الشاشة</span>
+            </button>
+            <div id="sim-tutor-explanation" class="hidden rounded-2xl bg-black/60 border border-emerald-500/30 p-3.5 text-xs text-emerald-200 leading-relaxed rtl-block"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         UPGRADE 2: DUAL-MODE REALISTIC MOCK EXAMS (#mock-exams)
+         Tab A: Voice Oral Exam ("Answer Out Loud — I'm Listening")
+         Tab B: Timed Iraqi Ministerial Written Exam Paper
+         ==================================================================== -->
+    <section id="mock-exams" aria-labelledby="mock-exams-title" class="px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="flex flex-col items-center text-center mb-10">
+          <div class="astra-section-badge warm home-card-shell mb-5">
+            <span class="font-mono text-xs uppercase tracking-[1.8px] text-white">Mock Exam</span>
+            <span class="mt-auto mb-2 text-4xl">🎤</span>
+          </div>
+          <h2 id="mock-exams-title" class="text-3xl sm:text-5xl font-bold text-white mb-4">
+            الامتحان الوزاري التجريبي: <span class="text-amber-400">شفهي بالصوت + تحريري بالوقت</span>
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad] max-w-2xl mb-6">
+            تدرب كما في قاعة الامتحان تماماً: أجب بصوتك على أسئلة (علل / علامَ يعتمد) ليقوم المدرب بتقييم مصطلحاتك العلمية، أو امتحن ورقة وزارية كاملة من 100 درجة:
+          </p>
+
+          <!-- Mode Switcher Tabs -->
+          <div class="inline-flex rounded-full border border-white/15 bg-[#14141a] p-1.5">
+            <button id="tab-btn-oral" type="button" class="rounded-full px-6 py-2.5 text-xs sm:text-sm font-semibold home-ramp-fill text-white transition cursor-pointer">
+              🎙️ الامتحان الشفهي الصوتي (أجب بصوتك)
+            </button>
+            <button id="tab-btn-written" type="button" class="rounded-full px-6 py-2.5 text-xs sm:text-sm font-semibold text-[#8a9bad] hover:text-white transition cursor-pointer">
+              📝 ورقة الامتحان الوزاري التحريري (100 درجة)
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB A: VOICE-DRIVEN ORAL EXAMINER -->
+        <div id="mock-oral-panel" class="home-card-shell rounded-[36px] p-6 lg:p-10 rtl-block"></div>
+
+        <!-- TAB B: TIMED WRITTEN MINISTERIAL EXAM -->
+        <div id="mock-written-panel" class="hidden home-card-shell rounded-[36px] p-6 lg:p-10 rtl-block"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         UPGRADE 3C: KNOWLEDGE GAP RADAR & SPACED REPETITION MISTAKE BANK (#mastery-journey)
+         ==================================================================== -->
+    <section id="mastery-journey" aria-labelledby="mastery-journey-title" class="px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="flex flex-col items-center text-center mb-10">
+          <div class="astra-section-badge home-card-shell mb-5">
+            <span class="font-mono text-xs uppercase tracking-[1.8px] text-white">Radar</span>
+            <span class="mt-auto mb-2 text-4xl">📡</span>
+          </div>
+          <h2 id="mastery-journey-title" class="text-3xl sm:text-5xl font-bold text-white mb-3">
+            رادار الفجوات المعرفية وبنك الأخطاء الوزارية
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad] max-w-2xl">
+            يراقب Astra أداءك في كل فصل ويكتشف المهارات الفرعية التي تحتاج إلى تقوية، ويجمع الأسئلة التي أخطأت بها في قائمة مراجعة متباعدة:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Left 7 Cols: Chapter & Sub-Skill Mastery Radar Bars -->
+          <div class="lg:col-span-7 home-card-shell rounded-[34px] p-6 lg:p-8 rtl-block">
+            <div class="flex items-center justify-between mb-5">
+              <h3 class="text-xl font-bold text-white">📊 خريطة إتقان الفصول والمهارات الوزارية</h3>
+              <span id="overall-mastery-badge" class="font-mono text-xs bg-[#4353f3]/20 border border-[#5b6bff]/50 text-[#c9cfff] px-3 py-1 rounded-full"></span>
+            </div>
+            <div id="knowledge-gap-bars" class="space-y-4"></div>
+          </div>
+
+          <!-- Right 5 Cols: Spaced Repetition Mistake Bank ("بنك الأخطاء") -->
+          <div class="lg:col-span-5 home-card-shell rounded-[34px] p-6 lg:p-8 rtl-block flex flex-col justify-between gap-4">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-bold text-white">🔁 بنك الأخطاء والمراجعة المتباعدة</h3>
+                <span id="mistake-count-badge" class="font-mono text-xs bg-amber-500/20 border border-amber-400/40 text-amber-300 px-2.5 py-1 rounded-full"></span>
+              </div>
+              <p class="text-xs text-[#8a9bad] mb-4">
+                الأسئلة والمفاهيم التي تحتاج لإعادة تثبيت قبل الامتحان الوزاري (اضغط "أتقنتها الآن" بعد مراجعتها):
+              </p>
+              <div id="mistake-bank-list" class="space-y-3 max-h-[340px] overflow-y-auto pr-1"></div>
+            </div>
+
+            <button id="btn-add-sample-mistake" type="button" class="w-full py-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-xs font-semibold text-[#c9cfff] cursor-pointer">
+              + أضف ملاحظة أو سؤالاً صعباً إلى بنك المراجعة
+            </button>
           </div>
         </div>
       </div>
@@ -279,7 +527,7 @@
           <div id="study-mode-interactive-stage" class="mt-auto"></div>
         </article>
 
-        <!-- Interactive Card B: Small Wins, Every Day (Streak Tracker & Exam Collector) -->
+        <!-- Interactive Card B: Small Wins, Every Day (Streak Tracker) -->
         <article class="home-card-shell rounded-[38px] p-7 lg:p-9 flex flex-col justify-between gap-6 rtl-block">
           <div>
             <span class="font-mono text-xs uppercase tracking-widest text-amber-400 block mb-2">الالتزام اليومي للـ 100</span>
@@ -320,6 +568,37 @@
     </section>
 
     <!-- ====================================================================
+         UPGRADE 6: PARENT & TEACHER COMPANION HUB (#companion-hub)
+         ==================================================================== -->
+    <section id="companion-hub" aria-labelledby="companion-hub-title" class="px-6 py-16 lg:py-24">
+      <div class="mx-auto max-w-[1120px]">
+        <div class="flex flex-col items-center text-center mb-10 no-print">
+          <div class="astra-section-badge emerald home-card-shell mb-5">
+            <span class="font-mono text-xs uppercase tracking-[1.8px] text-white">Companion</span>
+            <span class="mt-auto mb-2 text-4xl">👨‍👩‍👧‍👦</span>
+          </div>
+          <h2 id="companion-hub-title" class="text-3xl sm:text-5xl font-bold text-white mb-3">
+            بوابة أولياء الأمور والمدرسين
+          </h2>
+          <p class="text-base sm:text-lg text-[#8a9bad] max-w-2xl">
+            بطاقة تقرير أسبوعية جاهزة للمشاركة مع الأهل عبر واتساب/تيليجرام، وأداة توليد أوراق امتحان وملازم PDF قابلة للطباعة للمدرسين والطلاب:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 no-print">
+          <!-- Parent Progress Report Card -->
+          <div id="parent-report-card" class="home-card-shell rounded-[34px] p-6 lg:p-8 rtl-block flex flex-col justify-between gap-5"></div>
+
+          <!-- Teacher Printable Worksheet & Summary Generator -->
+          <div id="teacher-worksheet-builder" class="home-card-shell rounded-[34px] p-6 lg:p-8 rtl-block flex flex-col justify-between gap-5"></div>
+        </div>
+
+        <!-- Printable Worksheet Preview Area (Visible on Print or Toggle) -->
+        <div id="printable-worksheet-area" class="hidden mt-8 rounded-3xl bg-white text-black p-8 rtl-block"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
          SECTION 5: FREQUENTLY ASKED QUESTIONS (#faq)
          ==================================================================== -->
     <section id="faq" aria-labelledby="faq-title" class="px-6 py-16 lg:py-24">
@@ -347,10 +626,10 @@
     <div class="mx-auto max-w-[1120px] flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <div class="ai-sphere-orb size-6 rounded-full"></div>
-        <span class="font-semibold text-white">Astra AI Physics — منصة فيزياء السادس العلمي العراقي</span>
+        <span class="font-semibold text-white">Astra AI Physics — منصة فيزياء السادس العلمي العراقي (تحديث Astra الكامل)</span>
       </div>
       <div>
-        مبني بالكامل لمنهج وزارة التربية العراقية (الفصول 1–9) مع محرك KaTeX والمحاكاة التفاعلية
+        مبني بالكامل لمنهج وزارة التربية العراقية (الفصول 1–9) · يضم مخطط الامتحان، البودكاست، الامتحان الشفهي الصوتي والتحريري، وحلال المسائل
       </div>
     </div>
   </footer>

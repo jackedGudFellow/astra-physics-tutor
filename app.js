@@ -1,7 +1,12 @@
 /* ==========================================================================
    Astra AI Physics — Iraqi 6th Scientific (السادس العلمي) Operational Platform
-   Complete 8/9-Chapter Syllabus, KaTeX Equation Atlas, Ministerial Exam
-   Step-by-Step Solver, 60 FPS 2D Chapter Simulators, & Tutoring Methods
+   Full Astra AI Suite:
+   - Upgrade 1: "Panic-to-Ready" Exam Countdown & Material-Grounded Study Planner
+   - Upgrade 2: Dual-Mode Mock Exams (Voice Oral Examiner + Timed Written Paper)
+   - Upgrade 3: 10-Step Chapter Mastery Loop, 2-Host Topic Podcast & Gap Radar
+   - Upgrade 4: Interactive Lab Challenge HUD ("Find It") & Contextual Tutor
+   - Upgrade 5: Dynamic Custom Ministerial Problem Parser (Solves Any Custom Numbers)
+   - Upgrade 6: Parent Progress Report Card & Teacher Printable PDF Exam Builder
    ========================================================================== */
 
 const IRAQI_SYLLABUS_CHAPTERS = [
@@ -11,6 +16,19 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'المتسعات (Capacitors)',
     titleEn: 'Electrostatics, Dielectrics & Capacitor Networks',
     weight: '20–25 درجة وزارية',
+    masteryPct: 82,
+    subSkills: [
+      { name: 'المتسعة المنفردة وإدخال العازل (متصلة / مفصولة)', pct: 88 },
+      { name: 'ربط التوازي والتوالي والربط المختلط', pct: 80 },
+      { name: 'الطاقة المختزنة PE ودائرة شحن وتفريغ المتسعة R-C', pct: 76 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'أهلاً بكم في بودكاست الفصل الأول: المتسعات! سارة، ما أكثر فخ يقع فيه طلاب السادس العلمي في مسائل المتسعات؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'بصراحة يا أستاذ، دائماً نحتار عندما يدخل لوح عازل (k): متى يبقى فرق الجهد ثابتاً ومتى تبقى الشحنة ثابتة؟' },
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'مفتاح الحل بكلمتين في السؤال! إذا قال (ما زالت متصلة بالبطارية) فالبطارية تحافظ على فرق الجهد ثابتاً ΔVk = ΔV وتزداد الشحنة. أما إذا قال (فُصلت عن المصدر) فالشحنة محبوسة لا تملك مكاناً تذهب إليه فتبقى Qk = Q ويقل فرق الجهد!' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'وماذا عن قانون الطاقة المختزنة PE؟ لماذا نخسر درجة في الامتحان الوزاري فيه؟' },
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'لأن الطاقة بالجول (J) لا تقبل المايكرو! في قانون PE = ½ C (ΔV)² يجب دائماً ضرب السعة بـ 10⁻⁶ لتحويلها من μF إلى الفاراد قبل الضرب.' }
+    ],
     summary: 'يدرس سعة المتسعة ذات الصفيحتين المتوازيتين، تأثير إدخال العازل الكهربائي (ثابت العزل k) في حالتي المتسعة المتصلة والمفصولة، ربط التوالي والتوازي والربط المختلط، والطاقة المختزنة ودائرة شحن وتفريغ المتسعة (R-C).',
     goldenRules: [
       'إذا ذُكر في السؤال (ما زالت متصلة بالمصدر): يبقى فرق الجهد ثابتاً (ΔV_k = ΔV) وتزداد الشحنة (Q_k = k·Q).',
@@ -46,6 +64,19 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'الحث الكهرومغناطيسي (Electromagnetic Induction)',
     titleEn: 'Faraday’s Law, Lenz’s Law, Motional EMF & Self/Mutual Induction',
     weight: '20–25 درجة وزارية',
+    masteryPct: 74,
+    subSkills: [
+      { name: 'القوة الدافعة الحركية للساق الموصلة E_motional', pct: 85 },
+      { name: 'قانون فرداي وزاوية متجه المساحة مع كثافة الفيض', pct: 68 },
+      { name: 'الحث الذاتي ومعادلة الدائرة الحثية والحث المتبادل', pct: 70 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'في الفصل الثاني (الحث الكهرومغناطيسي)، الشرط الذهبي عند فرداي هو حصول تغير في الفيض المغناطيسي ΔΦB / Δt.' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'أستاذ، في مسائل الحلقة والملف، متى نأخذ الزاوية θ كما هي ومتى نطرحها من 90 درجة؟' },
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'سؤال وزاري حاسم! القانون ΦB = B A cos(θ) يتعامل مع متجه المساحة العمودي على الحلقة. فإذا أعطاك الزاوية مع (مستوى الملف أو الحلقة) اطرحها فوراً من 90°: θ = 90° - الزاوية المعطاة!' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'وفي معادلة الدائرة الحثية لحظة غلق المفتاح؟' },
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'لحظة غلق المفتاح يكون التيار الآني صفراً (I_inst = 0)، فتصبح الفولتية الموضوعة V_app مساوية لـ L(ΔI/Δt) مباشرة.' }
+    ],
     summary: 'يتناول القوة الدافعة الكهربائية المحتثة الحركية في ساق موصلة، الفيض المغناطيسي وقانون فرداي، قانون لنز، الحث الذاتي ومعادلة الدائرة الحثية، والحث المتبادل بين ملفين.',
     goldenRules: [
       'لحظة غلق الدائرة الحثية: التيار الآني يساوي صفراً (I_inst = 0) فتكون V_app = L(ΔI/Δt).',
@@ -81,6 +112,18 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'التيار المتناوب (Alternating Current - AC)',
     titleEn: 'RLC Series & Parallel Circuits, Phasors & Electrical Resonance',
     weight: '20–25 درجة وزارية',
+    masteryPct: 68,
+    subSkills: [
+      { name: 'دائرة تيار متناوب متوالية الربط R-L-C ومخطط الممانعة', pct: 72 },
+      { name: 'حالة الرنين الكهربائي وعامل النوعية Qf', pct: 64 },
+      { name: 'دائرة التوازي R-L-C ومخطط التيارات المتجهة', pct: 68 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'الفصل الثالث هو ملك المسائل الوزارية! سارة، كيف نعرف أن دائرة التوالي R-L-C في حالة رنين حتى لو لم يذكر كلمة رنين صراحة؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'إذا قال أن عامل القدرة Pf = 1، أو القدرة الحقيقية تساوي القدرة الظاهرية، أو أن ممانعة الدائرة بأقل مقدار (Z = R)!' },
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'أحسنتِ! وما الفرق الجوهري بين ربط التوالي وربط التوازي في الفصل الثالث؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'في التوالي التيار متساوٍ ولدينا مخطط ممانعة Z؛ أما في التوازي فالفولتية متساوية ونستخدم مخطط التيارات فقط ولا يوجد مخطط ممانعة!' }
+    ],
     summary: 'يدرس دوائر التيار المتناوب (مقاومة صرف R، محث صرف L، متسعة صرف C)، دوائر R-L-C المتوالية والمتوازية، الممانعة الكلية Z، عامل القدرة Pf، وحالة الرنين الكهربائي وعامل النوعية Qf.',
     goldenRules: [
       'علامات الرنين في التوالي (6 مفاتيح وزارية): (1) XL = XC، (2) Z = R (أقل ممانعة وأعظم تيار)، (3) VL = VC، (4) VT = VR، (5) زاوية فرق الطور φ = 0 وعامل القدرة Pf = 1، (6) القدرة الحقيقية = القدرة الظاهرية (P_real = P_app).',
@@ -115,6 +158,15 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'الموجات الكهرومغناطيسية (Electromagnetic Waves)',
     titleEn: 'Maxwell’s Equations, Antennas & Wave Propagation',
     weight: '10–15 درجة وزارية',
+    masteryPct: 79,
+    subSkills: [
+      { name: 'خصائص الموجات الكهرومغناطيسية وتيار الإزاحة', pct: 82 },
+      { name: 'طول الهوائي (نصف موجة وربع موجة مؤرض)', pct: 76 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'الفصل الرابع قصير ومضمون الدرجة! سارة، متى نقسم الطول الموجي λ على 2 ومتى نقسمه على 4 لحساب طول الهوائي؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'إذا كان الهوائي غير مؤرض نستخدم ℓ = λ / 2، وإذا ذكر في السؤال أن الهوائي مؤرض نستخدم ℓ = λ / 4 لأن الأرض تكمل صورة النصف الآخر!' }
+    ],
     summary: 'يدرس نظريات ماكسويل، تيار الإزاحة، خصائص الموجات الكهرومغناطيسية، توليدها وكشفها، حساب طول الهوائي (نصف موجة وربع موجة مؤرض)، وطبقات الأيونوسفير.',
     goldenRules: [
       'أقصر طول لهوائي غير مؤرض يحقق الرنين يساوي نصف طول الموجة (ℓ = λ / 2).',
@@ -139,6 +191,15 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'البصريات الفيزيائية (Physical Optics)',
     titleEn: 'Interference, Young’s Double-Slit, Diffraction Grating & Polarization',
     weight: '15–20 درجة وزارية',
+    masteryPct: 71,
+    subSkills: [
+      { name: 'تجربة شقي يونغ وفاصلة الهدب Δy', pct: 75 },
+      { name: 'محزز الحيود وقانون بروستر للاستقطاب', pct: 67 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'في البصريات الفيزيائية، تجربة شقي يونغ تثبت الطبيعة الموجية للضوء. ما العوامل التي تزيد فاصلة الهدب Δy؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'من القانون Δy = λL / d، تزداد فاصلة الهدب بزيادة الطول الموجي λ أو بعد الشاشة L، وبنقصان البعد بين الشقين d!' }
+    ],
     summary: 'يدرس تداخل الموجات الضوئية (البناء والإتلافي)، تجربة شقي يونغ وقياس الطول الموجي وفاصلة الهدب، حيود الضوء ومحزز الحيود، واستقطاب الضوء (قانون بروستر).',
     goldenRules: [
       'في تجربة شقي يونغ: تزداد فاصلة الهدب (Δy) بزيادة الطول الموجي (λ) أو زيادة بعد الشاشة (L)، وتزداد بنقصان البعد بين الشقين (d).',
@@ -168,6 +229,15 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'الفيزياء الحديثة (Modern Physics)',
     titleEn: 'Blackbody Radiation, Photoelectric Effect, De Broglie & Relativity',
     weight: '15–20 درجة وزارية',
+    masteryPct: 62,
+    subSkills: [
+      { name: 'المعادلة الكهروضوئية لآينشتاين وجهد الإيقاف Vs', pct: 60 },
+      { name: 'طول موجة دي برولي ومبدأ اللادقة لهايزنبرغ', pct: 65 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'في الظاهرة الكهروضوئية، لماذا فشلت الفيزياء الكلاسيكية ونجح آينشتاين؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'لأن انبعاث الإلكترونات الضوئية يعتمد على تردد الضوء الساقط (f ≥ f0) وليس على شدة الضوء! فإذا كان التردد أقل من تردد العتبة لا ينبعث أي إلكترون مهما زادت الشدة.' }
+    ],
     summary: 'يدرس إشعاع الجسم الأسود وقانون فين، الظاهرة الكهروضوئية ومعادلة آينشتاين، الموجات المادية لدي برولي، مبدأ اللادقة لهايزنبرغ، والنظرية النسبية الخاصة.',
     goldenRules: [
       'لتحويل الطاقة أو دالة الشغل من إلكترون-فولت (eV) إلى جول (J): نضرب في شحنة الإلكترون (× 1.6 × 10⁻¹⁹). وللتحويل من جول إلى eV نقسم على (1.6 × 10⁻¹⁹).',
@@ -197,6 +267,15 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'إلكترونيات الحالة الصلبة (Solid State Electronics)',
     titleEn: 'Semiconductors, PN Junction Diodes & Transistor Amplifiers',
     weight: '10–15 درجة وزارية',
+    masteryPct: 75,
+    subSkills: [
+      { name: 'أشباه الموصلات N-type و P-type والثنائي البلوري PN', pct: 78 },
+      { name: 'الترانزستور وربح التيار والفولتية والقدرة', pct: 72 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'في الترانزستور، أي التيارات الثلاثة هو الأكبر دائماً يا سارة؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'تيار الباعث IE هو الأكبر دائماً لأنه مجموع تياري الجامع والقاعدة: IE = IC + IB، ولذلك يكون ربح التيار α في القاعدة المشتركة أقل من 1 دائماً!' }
+    ],
     summary: 'يدرس حزم الطاقة في المواد الموصلة والعازلة وشبه الموصلة، التشويب من نوع N ونوع P، الثنائي البلوري PN وأنواعه، والترانزستور كمضخم بقاعدة مشتركة وباعث مشترك.',
     goldenRules: [
       'تيار الباعث (I_E) هو دائماً الأكبر في الترانزستور لأنه مجموع تياري الجامع والقاعدة: I_E = I_C + I_B.',
@@ -221,6 +300,15 @@ const IRAQI_SYLLABUS_CHAPTERS = [
     titleAr: 'الأطياف الذرية والليزر والفيزياء النووية (Spectra, Lasers & Nuclear)',
     titleEn: 'Bohr Atom, X-Rays, Compton Effect, Lasers & Nuclear Binding Energy',
     weight: '20–25 درجة وزارية',
+    masteryPct: 70,
+    subSkills: [
+      { name: 'الأشعة السينية (أقصر طول موجي) وتأثير كومبتون', pct: 74 },
+      { name: 'نصف قطر النواة R وطاقة الربط النووية Eb', pct: 66 }
+    ],
+    podcast: [
+      { speaker: 'الأستاذ باقر', role: 'host', text: 'في الفيزياء النووية، كيف نحسب نصف قطر النواة وطاقة الربط النووية بسرعة ودقة؟' },
+      { speaker: 'سارة (طالبة)', role: 'student', text: 'نصف قطر النواة يتناسب طردياً مع الجذر التكعيبي للعدد الكتلي R = 1.2 × A^(1/3) بالفيرمي، وطاقة الربط النووية نحسبها بضرب النقص الكتلي Δm بوحدة u في 931 MeV!' }
+    ],
     summary: 'يدرس سلاسل طيف ذرة الهيدروجين، إنتاج الأشعة السينية وأقصر طول موجي، تأثير كومبتون، أسس عمل الليزر، وتركيب النواة ونصف قطرها وطاقة الربط النووية والانحلال الإشعاعي.',
     goldenRules: [
       'في مسائل الأشعة السينية: الطاقة الحركية العظمى للإلكترونات المعجلة تتحول بالكامل لطاقة فوتون الأشعة السينية عند أقصر طول موجي: eV = hc / λ_min.',
@@ -247,7 +335,7 @@ const IRAQI_SYLLABUS_CHAPTERS = [
 ];
 
 // ============================================================================
-// 6 Authentic Iraqi 6th Scientific Ministerial ("وزاريات") Problems
+// 6 Authentic Iraqi 6th Scientific Ministerial ("وزاريات") Problems + Lab Missions
 // ============================================================================
 const PHYSICS_PROBLEMS = [
   {
@@ -257,6 +345,14 @@ const PHYSICS_PROBLEMS = [
     title: 'ربط المتسعات على التوازي وإدخال عازل (متصلة بالمصدر)',
     prompt: 'متسعتان (C₁ = 4 μF ، C₂ = 8 μF) مربوطتان مع بعضهما على التوازي، رُبطت مجموعتهما بين قطبي بطارية فرق الجهد بين قطبيها (ΔV = 24 V). إذا أُدخل لوح من مادة عازلة ثابت عزلها (k = 2) بين صفيحتي المتسعة الأولى وما زالت المجموعة متصلة بالبطارية، فما مقدار: (1) السعة المكافئة بعد العازل، (2) الشحنة المختزنة في كل متسعة والشحنة الكلية بعد العازل، (3) الطاقة المختزنة في المتسعة الأولى بعد العازل؟',
     latexFormula: 'C_{1k} = k C_1, \\quad C_{\\text{eq}} = C_{1k} + C_2, \\quad Q_T = C_{\\text{eq}} \\Delta V, \\quad PE_{1k} = \\frac{1}{2} C_{1k} (\\Delta V)^2',
+    challengeMission: {
+      prompt: 'حرك منزلقات المختبر بحيث تصبح السعة المكافئة الكلية (C_eq = 24 μF) والشحنة الكلية (Q_total = 480 μC)!',
+      check: (params) => {
+        const ceq = params.k.value * params.c1.value + params.c2.value;
+        const qt = ceq * params.voltage.value;
+        return ceq === 24 && qt === 480;
+      }
+    },
     simParams: {
       c1: { label: 'السعة الأولى C₁ (μF)', min: 2, max: 16, step: 1, value: 4 },
       c2: { label: 'السعة الثانية C₂ (μF)', min: 2, max: 16, step: 1, value: 8 },
@@ -306,6 +402,15 @@ const PHYSICS_PROBLEMS = [
     title: 'معادلة الدائرة الحثية ونمو التيار في ملف (R-L)',
     prompt: 'ملف معامل حثه الذاتي (L = 0.4 H) ومقاومته (R = 20 Ω) وُضعت عليه فولتية مستمرة مقدارها (V_app = 200 V). احسب المعدل الزمني لتغير التيار (ΔI/Δt) في الحالتين: (1) لحظة غلق الدائرة، (2) لحظة ازدياد التيار إلى 60% من مقداره الثابت.',
     latexFormula: 'V_{\\text{app}} = I_{\\text{inst}} R + L \\frac{\\Delta I}{\\Delta t}, \\qquad I_{\\text{const}} = \\frac{V_{\\text{app}}}{R}',
+    challengeMission: {
+      prompt: 'اضبط النسبة المئوية للتيار الآني ومعامل الحث الذاتي بحيث يصبح المعدل الزمني لتغير التيار (ΔI/Δt = 100 A/s) تماماً!',
+      check: (params) => {
+        const iconst = params.vapp.value / params.resistance.value;
+        const iinst = (params.pct.value / 100) * iconst;
+        const didt = (params.vapp.value - iinst * params.resistance.value) / params.inductance.value;
+        return Math.abs(didt - 100) < 1;
+      }
+    },
     simParams: {
       vapp: { label: 'الفولتية الموضوعة V_app (V)', min: 50, max: 300, step: 10, value: 200 },
       inductance: { label: 'معامل الحث الذاتي L (H)', min: 0.1, max: 1.0, step: 0.1, value: 0.4 },
@@ -338,7 +443,7 @@ const PHYSICS_PROBLEMS = [
       {
         num: 3,
         title: 'حساب المعدل الزمني لتغير التيار (ΔI/Δt) عند لحظة 60%',
-        principle: 'نعوض I_inst = 6 A في المعادلة العامة للدائرة الحثية: V_app = I_inst·R + L(ΔI/Δt) (أو مباشرة: L(ΔI/Δt) = المتبقي من النسبة 40% × V_app).',
+        principle: 'نعوض I_inst = 6 A في المعادلة العامة للدائرة الحثية: V_app = I_inst·R + L(ΔI/Δt).',
         formula: '200 = (6 \\times 20) + 0.4 \\frac{\\Delta I}{\\Delta t} \\implies 200 - 120 = 0.4 \\frac{\\Delta I}{\\Delta t} \\implies \\frac{\\Delta I}{\\Delta t} = \\frac{80}{0.4} = 200\\text{ A/s}',
         substitution: '\\frac{\\Delta I}{\\Delta t} = 200\\text{ A/s}',
         question: 'ما مقدار (ΔI/Δt) لحظة ازدياد التيار إلى 60% من مقداره الثابت (بوحدة A/s)؟',
@@ -355,6 +460,14 @@ const PHYSICS_PROBLEMS = [
     title: 'دائرة تيار متناوب متوالية الربط R-L-C في حالة رنين',
     prompt: 'دائرة تيار متناوب متوالية الربط تحتوي مقاومة صرف (R = 150 Ω) ومحبثاً صرفاً معامل حثه الذاتي (L = 0.2 H) ومتسعة ذات سعة صرف، ومذبذباً كهربائياً فرق جهده (V_T = 300 V) بتردد زاوي (ω_r = 500 rad/s). وكانت الدائرة في حالة رنين! احسب: (1) الرادة الحثية XL وسعة المتسعة C، (2) التيار الكلي المنساب في الدائرة I_T، (3) عامل النوعية Q_f.',
     latexFormula: 'X_L = X_C = \\omega_r L, \\quad Z = R, \\quad I_T = \\frac{V_T}{Z}, \\quad Q_f = \\frac{1}{R}\\sqrt{\\frac{L}{C}} = \\frac{X_L}{R}',
+    challengeMission: {
+      prompt: 'اجعل الدائرة في حالة رنين كهربائي (X_L = X_C) مع ضبط المقاومة R = 100 Ω بحيث يصبح عامل القدرة Pf = 1 والممانعة Z = 100 Ω!',
+      check: (params) => {
+        const xl = params.omega.value * params.inductance.value;
+        const xc = 1 / (params.omega.value * 20e-6);
+        return Math.abs(xl - xc) < 5 && params.resistance.value === 100;
+      }
+    },
     simParams: {
       omega: { label: 'التردد الزاوي ω (rad/s)', min: 200, max: 900, step: 25, value: 500 },
       resistance: { label: 'المقاومة R (Ω)', min: 50, max: 300, step: 25, value: 150 },
@@ -386,7 +499,7 @@ const PHYSICS_PROBLEMS = [
       {
         num: 3,
         title: 'حساب عامل النوعية للدائرة الرنينية (Quality Factor Q_f)',
-        principle: 'عامل النوعية يعطى بالعلاقة Q_f = (1/R)√(L/C) أو بطريقة أسرع عند الرنين: Q_f = X_L / R = V_L / V_R.',
+        principle: 'عامل النوعية يعطى بالعلاقة Q_f = (1/R)√(L/C) أو بطريقة أسرع عند الرنين: Q_f = X_L / R.',
         formula: 'Q_f = \\frac{1}{R}\\sqrt{\\frac{L}{C}} = \\frac{1}{150}\\sqrt{\\frac{0.2}{20 \\times 10^{-6}}} = \\frac{100}{150} \\approx 0.67',
         substitution: 'Q_f = \\frac{2}{3} \\approx 0.67',
         question: 'ما مقدار عامل النوعية Q_f للدائرة؟',
@@ -403,6 +516,13 @@ const PHYSICS_PROBLEMS = [
     title: 'تجربة شقي يونغ وقياس الطول الموجي وفاصلة الهدب',
     prompt: 'إذا كان البعد بين شقي تجربة يونغ يساوي (d = 0.2 mm) وبعد الشاشة عنهما يساوي (L = 1 m) وكان البعد بين الهدب الثالث المضيء والهدب المركزي يساوي (y₃ = 9.49 mm). احسب: (1) طول موجة الضوء المستعمل في التجربة بوحدة النانومتر (nm)، (2) فاصلة الهدب (Δy) بوحدة المليمتر (mm).',
     latexFormula: 'y_m = \\frac{\\lambda L}{d} m \\implies \\lambda = \\frac{y_m \\cdot d}{m \\cdot L}, \\qquad \\Delta y = \\frac{\\lambda L}{d} = \\frac{y_m}{m}',
+    challengeMission: {
+      prompt: 'اضبط الطول الموجي λ وبعد الشاشة L والبعد بين الشقين d بحيث تصبح فاصلة الهدب (Δy ≥ 5.0 mm)!',
+      check: (params) => {
+        const dy = (params.wavelength.value * 1e-9 * params.screenDist.value) / (params.slitDist.value * 1e-3) * 1e3;
+        return dy >= 5.0;
+      }
+    },
     simParams: {
       wavelength: { label: 'الطول الموجي λ (nm)', min: 400, max: 700, step: 10, value: 633 },
       slitDist: { label: 'البعد بين الشقين d (mm)', min: 0.1, max: 0.5, step: 0.05, value: 0.2 },
@@ -440,6 +560,13 @@ const PHYSICS_PROBLEMS = [
     title: 'الظاهرة الكهروضوئية ومعادلة آينشتاين وجهد الإيقاف',
     prompt: 'سقط ضوء طوله الموجي (λ = 300 nm) على معدن الصوديوم، فكانت دالة الشغل للصوديوم تساوي (W = 2.46 eV). جد: (1) طاقة الفوتون الساقط بوحدة الجول وبوحدة eV، (2) الطاقة الحركية العظمى للإلكترونات الضوئية المنبعثة (KE_max) بوحدة eV، (3) جهد الإيقاف (القطع) V_s.',
     latexFormula: 'E = \\frac{hc}{\\lambda}, \\qquad KE_{\\max} = E - W, \\qquad KE_{\\max} = e V_s',
+    challengeMission: {
+      prompt: 'قلل الطول الموجي λ أو دالة الشغل W بحيث تتحرر إلكترونات ضوئية بطاقة حركية عظمى (KE_max ≥ 3.0 eV)!',
+      check: (params) => {
+        const E_ev = 1240 / params.wavelength.value;
+        return E_ev - params.workFunc.value >= 3.0;
+      }
+    },
     simParams: {
       wavelength: { label: 'طول موجة الضوء الساقط λ (nm)', min: 200, max: 600, step: 10, value: 300 },
       workFunc: { label: 'دالة الشغل للمعدن W (eV)', min: 1.5, max: 4.5, step: 0.1, value: 2.46 }
@@ -476,6 +603,10 @@ const PHYSICS_PROBLEMS = [
     title: 'شحنة ونصف قطر النواة وطاقة الربط النووية',
     prompt: 'لنواة ذرة الكربون (¹²₆C) حيث العدد الذري (Z = 6) والعدد الكتلي (A = 12)؛ جد: (1) مقدار شحنة النواة (q) مقسوماً على 10⁻¹⁹ كولوم، (2) نصف قطر النواة (R) بوحدة الفيرمي (fm). علماً أن الجذر التكعيبي للعدد 12 يساوي تقريباً (2.289).',
     latexFormula: 'q = Z e, \\qquad R = r_0 A^{1/3} \\quad (r_0 = 1.2\\text{ fm} = 1.2 \\times 10^{-15}\\text{ m})',
+    challengeMission: {
+      prompt: 'اضبط العدد الكتلي A لنواة بحيث يصبح نصف قطر النواة (R = 3.60 fm) تماماً (تلميح: ما العدد الذي جذره التكعيبي 3؟)!',
+      check: (params) => params.a.value === 27
+    },
     simParams: {
       z: { label: 'العدد الذري (عدد البروتونات Z)', min: 1, max: 26, step: 1, value: 6 },
       a: { label: 'العدد الكتلي (مجموع النيوكلونات A)', min: 1, max: 64, step: 1, value: 12 }
@@ -508,8 +639,89 @@ const PHYSICS_PROBLEMS = [
 ];
 
 // ============================================================================
-// Iraqi 6th Grade Studying & Tutoring Methods Data
+// Oral & Written Ministerial Mock Exam Banks
 // ============================================================================
+const ORAL_MOCK_QUESTIONS = [
+  {
+    id: 'oral-1',
+    chapter: 'الفصل الأول: المتسعات',
+    question: 'علل وزاري: يقل مقدار السعة المكافئة لمجموعة المتسعات المربوطة على التوالي ويكون أصغر من سعة أصغر متسعة في المجموعة؟',
+    modelAnswer: 'بسبب ازدياد البعد بين صفيحتي المتسعة المكافئة (d)، وبما أن السعة تتناسب عكسياً مع البعد (C ∝ 1/d) عند ثبوت المساحة A ونوع الوسط العازل، لذا تقل السعة المكافئة.',
+    keywords: ['البعد', 'عكسيا', 'صفيحتي', 'المساحة']
+  },
+  {
+    id: 'oral-2',
+    chapter: 'الفصل الثاني: الحث الكهرومغناطيسي',
+    question: 'علامَ يعتمد مقدار القوة الدافعة الكهربائية المحتثة الحركية (E_motional) المتولدة على طرفي ساق تتحرك داخل مجال مغناطيسي منتظم؟',
+    modelAnswer: 'تعتمد على: (1) السرعة الخطية للساق v، (2) كثافة الفيض المغناطيسي B، (3) طول الساق الموصلة ℓ، (4) جيب الزاوية sin θ المحصورة بين متجه السرعة ومتجه كثافة الفيض.',
+    keywords: ['السرعة', 'كثافة الفيض', 'طول الساق', 'الزاوية']
+  },
+  {
+    id: 'oral-3',
+    chapter: 'الفصل الثالث: التيار المتناوب',
+    question: 'علل وزاري: يفضل استعمال محث صرف في التحكم بتيار التفريغ في مصباح الفلورسنت ولا تستعمل مقاومة صرف؟',
+    modelAnswer: 'لأن المحث الصرف عندما يكون في الدائرة لا يبدد قدرة (القدرة المتوسطة المستهلكة تساوي صفراً P = 0)، بينما المقاومة الصرف تستهلك وتبدد القدرة بشكل حرارة (P = I² R).',
+    keywords: ['قدرة', 'صفر', 'حرارة', 'يبدد']
+  },
+  {
+    id: 'oral-4',
+    chapter: 'الفصل الخامس: البصريات الفيزيائية',
+    question: 'ماذا يحصل لفاصلة الهدب (Δy) في تجربة شقي يونغ لو استُعمل ضوء أحمر بدلاً من الضوء الأزرق؟ ولماذا؟',
+    modelAnswer: 'تزداد فاصلة الهدب (Δy) وتبتعد الأهداب عن بعضها؛ لأن الطول الموجي للضوء الأحمر أكبر من الطول الموجي للضوء الأزرق، وفاصلة الهدب تتناسب طردياً مع الطول الموجي (Δy = λL/d).',
+    keywords: ['تزداد', 'الطول الموجي', 'طرديا', 'أكبر']
+  },
+  {
+    id: 'oral-5',
+    chapter: 'الفصل السادس: الفيزياء الحديثة',
+    question: 'لماذا فشلت النظرية الكهرومغناطيسية الكلاسيكية في تفسير الظاهرة الكهروضوئية؟',
+    modelAnswer: 'لأن النظرية الكلاسيكية افترضت أن طاقة الإلكترونات الضوئية تعتمد على شدة الضوء الساقط ولا تعتمد على التردد، بينما أثبتت التجربة أن الانبعاث يعتمد على تردد الضوء الساقط (تردد العتبة f0) ويحصل آنياً.',
+    keywords: ['شدة الضوء', 'تردد', 'العتبة', 'آنيا']
+  }
+];
+
+const WRITTEN_EXAM_PAPER = [
+  {
+    qNum: 'السؤال الأول (20 درجة)',
+    chapter: 'الفصل الأول: المتسعات',
+    text: 'متسعتان (C₁ = 9 μF ، C₂ = 18 μF) مربوطتان مع بعضهما على التوالي، رُبطت مجموعتهما مع نضيدة فرق الجهد الكهربائي بين قطبيها (12 V). احسب مقدار الشحنة المختزنة في أي من صفيحتي كل متسعة (Q_total) بوحدة (μC).',
+    expected: 72,
+    unit: 'μC',
+    solution: 'في ربط التوالي: 1/C_eq = 1/9 + 1/18 = 3/18 ⇒ C_eq = 6 μF. إذن Q_total = C_eq × ΔV = 6 × 12 = 72 μC.'
+  },
+  {
+    qNum: 'السؤال الثاني (20 درجة)',
+    chapter: 'الفصل الثاني: الحث الكهرومغناطيسي',
+    text: 'ساق موصلة طولها (ℓ = 1.6 m) تنزلق على سكة موصلة بسرعة (v = 5 m/s) باتجاه عمودي على مجال مغناطيسي منتظم كثافة فيضه (B = 0.8 T). احسب مقدار القوة الدافعة الكهربائية المحتثة الحركية (E_motional) بوحدة الفولت (V).',
+    expected: 6.4,
+    unit: 'V',
+    solution: 'E_motional = v · B · ℓ · sin(90°) = 5 × 0.8 × 1.6 × 1 = 6.4 V.'
+  },
+  {
+    qNum: 'السؤال الثالث (20 درجة)',
+    chapter: 'الفصل الثالث: التيار المتناوب',
+    text: 'دائرة تيار متناوب متوالية الربط تحتوي مقاومة صرف (R = 30 Ω) ورادة حثية (X_L = 120 Ω) ورادة سعوية (X_C = 80 Ω). احسب مقدار الممانعة الكلية للدائرة (Z) بوحدة الأوم (Ω).',
+    expected: 50,
+    unit: 'Ω',
+    solution: 'Z = √(R² + (X_L - X_C)²) = √(30² + (120 - 80)²) = √(900 + 1600) = √2500 = 50 Ω.'
+  },
+  {
+    qNum: 'السؤال الرابع (20 درجة)',
+    chapter: 'الفصل الخامس: البصريات الفيزيائية',
+    text: 'وضعت شاشة على بعد (L = 2 m) من حاجز ذي شقين في تجربة يونغ، أُضيء الشقان بضوء أحادي اللون طول موجته (λ = 600 nm) فكانت المسافة الفاصلة بين مركز الهدب المركزي المضيء ومركز الهدب ذي الرتبة (m = 1) تساوي (Δy = 3 mm). احسب البعد بين الشقين (d) بوحدة المليمتر (mm).',
+    expected: 0.4,
+    unit: 'mm',
+    solution: 'd = (λ · L) / Δy = (600×10⁻⁹ × 2) / (3×10⁻³) = 0.4 × 10⁻³ m = 0.4 mm.'
+  },
+  {
+    qNum: 'السؤال الخامس (20 درجة)',
+    chapter: 'الفصل الثامن/التاسع: الفيزياء النووية',
+    text: 'جد نصف قطر نواة النحاس (⁶⁴₂₉Cu) بوحدة الفيرمي (fm) علماً أن ثابت نصف القطر (r₀ = 1.2 fm).',
+    expected: 4.8,
+    unit: 'fm',
+    solution: 'R = r₀ · A^(1/3) = 1.2 × (64)^(1/3) = 1.2 × 4 = 4.8 fm.'
+  }
+];
+
 const TUTORING_METHODS_DATA = [
   {
     id: 'method-decision-tree',
@@ -567,34 +779,28 @@ const FLASHCARDS_DATA = [
   {
     topic: 'الفصل الثاني: الحث الكهرومغناطيسي · قانون لنز',
     front: 'ما الفائدة العملية من تطبيق قانون لنز؟ ولماذا يعد تطبيقاً لقانون حفظ الطاقة؟',
-    back: 'الفائدة: تحديد اتجاه التيار المحتث في دائرة كهربائية مقفلة. ويعد تطبيقاً لحفظ الطاقة لأن تحريك المغناطيس يتطلب إنجاز شغل ميكانيكي ضد القوة المعرقلة يتحول إلى طاقة كهربائية في الحمل.',
+    back: 'الفائدة: تحديد اتجاه التيار المحتث في دائرة كهربائية مقفلة. ويعد تطبيقاً لحفظ الطاقة لأن تحريك المغناطيس يتطلب إنجاز شغل ميكانيكي يتحول إلى طاقة كهربائية في الحمل.',
     formula: '\\mathcal{E}_{\\text{ind}} = -N \\frac{\\Delta \\Phi_B}{\\Delta t}'
   },
   {
     topic: 'الفصل الثالث: التيار المتناوب · عامل القدرة',
-    front: 'علل: يفضل استعمال محث صرف في التحكم بتيار التفريغ في مصباح الفلورسنت ولا تستعمل مقاومة صرف؟',
-    back: 'لأن المحث الصرف عندما يكون مثالياً لا يستهلك قدرة حقيقية (P_real = 0 لأن φ = 90° و cos 90° = 0)، بينما المقاومة الصرف تستهلك قدرة حرارية ضائعة (I²R).',
-    formula: 'P_{\\text{real}} = I_T V_T \\cos(90^\\circ) = 0'
+    front: 'علامَ يعتمد عامل القدرة (Pf) في دائرة تيار متناوب متوالية الربط تحتوي R-L-C؟',
+    back: 'يعتمد على نسبة المقاومة الصرف (R) إلى الممانعة الكلية للدائرة (Z)، أي على زاوية فرق الطور (φ) بين متجه الفولتية الكلية ومتجه التيار.',
+    formula: 'P_f = \\cos\\phi = \\frac{R}{Z} = \\frac{P_{\\text{real}}}{P_{\\text{app}}}'
   },
   {
-    topic: 'الفصل الخامس: البصريات الفيزيائية · الاستقطاب',
-    front: 'علامَ تعتمد زاوية الاستقطاب (زاوية بروستر θ_p)؟',
-    back: 'تعتمد على معامل الانكسار للوسط الشفاف (n) وفق العلاقة tan(θ_p) = n، ومعامل الانكسار بدوره يعتمد على نوع الوسط والطول الموجي للضوء الساقط.',
-    formula: '\\tan\\theta_p = n'
-  },
-  {
-    topic: 'الفصل السادس: الفيزياء الحديثة · الجسم الأسود',
-    front: 'كيففسر ماكس بلانك إشعاع الجسم الأسود؟ (فرضية الكم)',
-    back: 'افترض أن الجسم الأسود يشع ويمتص الطاقة بشكل كمات محددة ومستقلة من الطاقة تسمى (الفوتونات)، وأن طاقة كل فوتون تتناسب طردياً مع تردده (E = hf).',
-    formula: 'E = h f = \\frac{h c}{\\lambda}'
+    topic: 'الفصل الخامس: البصريات الفيزيائية · التداخل',
+    front: 'ما شرطا الحصول على التداخل المستديم في الموجات الضوئية؟',
+    back: '(1) أن تكون الموجتان متشاكهتين (متساويتين بالتردد وفرق الطور ثابت)، (2) أن يكون اهتزازهما في مستوٍ واحد وفي وسط واحد وتتجهان نحو نقطة واحدة.',
+    formula: '\\Delta \\ell = m \\lambda \\quad (m = 0, \\pm 1, \\pm 2, ...)'
   }
 ];
 
 const TRUE_FALSE_DATA = [
   {
-    statement: 'الفصل 1: عند مضاعفة فرق الجهد بين صفيحتي متسعة ذات سعة ثابتة، فإن الطاقة المختزنة فيها تتضاعف أربع مرات (4 أمثال).',
-    answer: true,
-    explanation: 'صحيح! لأن الطاقة المختزنة تتناسب طردياً مع مربع فرق الجهد عند ثبوت السعة: PE = ½ C (ΔV)²، فإذا تضاعف ΔV مرتين become (2)² = 4 أمثال.'
+    statement: 'الفصل 1: عند إدخال عازل كهربائي ثابت عزله (k = 3) بين صفيحتي متسعة مشحونة ومفصولة عن البطارية، فإن الشحنة المختزنة تزداد إلى ثلاثة أمثالها.',
+    answer: false,
+    explanation: 'خطأ! بما أن المتسعة مفصولة عن البطارية فإن الشحنة تبقى ثابتة (Q_k = Q)، والذي يزداد إلى 3 أمثاله هو السعة فقط (C_k = 3C).'
   },
   {
     statement: 'الفصل 2: يتولد تيار محتث في حلقة موصلة مقفلة موضوعة داخل مجال مغناطيسي منتظم وثابت الكثافة والمساحة.',
@@ -620,36 +826,95 @@ const FAQ_DATA = {
       a: 'نعم! يغطي الموقع جميع الفصول الثمانية/التسعة المعتمدة وزارياً: المتسعات، الحث الكهرومغناطيسي، التيار المتناوب، الموجات الكهرومغناطيسية، البصريات الفيزيائية، الفيزياء الحديثة، إلكترونيات الحالة الصلبة، والأطياف الذرية والليزر والفيزياء النووية.'
     },
     {
-      q: 'كيف يساعدني نظام الحل خطوة بخطوة في ضمان الـ 100 بالامتحان الوزاري؟',
-      a: 'في الامتحان الوزاري، تُوزع الدرجة (10 درجات للمسألة) على كتابة القانون، التعويض مع تحويل الوحدات، والناتج مع الوحدة. مدرب Astra يفحص كل خطوة على حدة وينبهك لتحويل المايكرو (10⁻⁶) والنانو (10⁻⁹) والـ eV قبل الانتقال للخطوة التالية.'
-    },
-    {
-      q: 'كيف أراجع الكلاميات (التعاليل، علامَ يعتمد، وماذا يحصل) بدون نسيان؟',
-      a: 'من خلال مختبر "ماذا يحصل لو؟" وبطاقات التكرار المتباعد (Flashcards) المربوطة بالمحاكاة البصرية، بحيث ترى بعينك كيف يقل فرق الجهد أو تتغير فاصلة الهدب بدلاً من الحفظ الأصم.'
+      q: 'كيف يعمل الامتحان الشفهي الصوتي (Oral Mock Exam) وحلال المسائل المخصص؟',
+      a: 'في الامتحان الشفهي يقرأ لك المدرب سؤالاً وزارياً ويستمع لإجابتك بالمايكروفون ثم يطابق إجابتك مع الكلمات المفتاحية في الجواب النموذجي لمركز الفحص. وفي حلال المسائل يمكنك لصق أي مسألة بأرقامك الخاصة ليقوم الـ Parser باستخراج المعطيات وحلها خطوة بخطوة!'
     }
   ],
   parents: [
     {
       q: 'كيف أتابع تقدم ابني/ابنتي في مادة الفيزياء للسادس العلمي؟',
-      a: 'يعرض الموقع نقاط الخبرة (XP)، سلسلة الأيام المتتالية (Streak)، والخطوات المتقنة في كل فصل من فصول المنهج الثمانية.'
+      a: 'من خلال "بوابة أولياء الأمور" أسفل الصفحة يمكنك استعراض بطاقة التقرير الأسبوعية التي توضح نسبة جاهزية الطالب للامتحان الوزاري، الفصول المتقنة، ومشاركتها عبر واتساب بضغطة زر.'
     }
   ],
   teachers: [
     {
-      q: 'هل يمكن استخدام المحاكيات البصرية (المتسعات، الرنين، شقي يونغ) داخل الصف أو الدورات؟',
-      a: 'بالتأكيد! جميع المحاكيات التفاعلية مصممة لتعمل مباشرة على السبورة الذكية أو الحاسوب أو الهاتف لتوضيح التجارب والأنشطة الاستهلالية في كتاب الفيزياء.'
+      q: 'كيف يمكنني توليد ورقة امتحان وزاري أو ملزمة قوانين قابلة للطباعة لطلابي؟',
+      a: 'من خلال "أداة المدرس" في قسم البوابة يمكنك اختيار الفصل وتحديد تضمين القوانين أو الأسئلة الوزارية مع الأجوبة النموذجية وطباعتها مباشرة بصيغة PDF نظيفة.'
     }
   ]
 };
 
 // Application State
 const state = {
+  // Upgrade 1: Exam Prep Planner
+  examDaysRemaining: 21,
+  examTargetScore: 100,
+  plannerSources: [
+    { id: 'src-ministerial', label: 'أسئلة وزارية (2015–2025)', active: true },
+    { id: 'src-book', label: 'مسائل وأنشطة الكتاب المنهجي', active: true },
+    { id: 'src-notes', label: 'ملزمة القوانين والتعاليل الذهبية', active: true },
+    { id: 'src-derivations', label: 'الاشتقاقات والرسوم البيانية', active: false }
+  ],
+  plannerMissions: [
+    { id: 'm1', day: 'اليوم 1–3', title: 'الفصل الأول: المتسعات (مسائل التوازي والتوالي وإدخال العازل)', weight: '25 درجة', done: true },
+    { id: 'm2', day: 'اليوم 4–6', title: 'الفصل الثاني: الحث الكهرومغناطيسي (قانون فرداي ومعادلة الدائرة الحثية)', weight: '25 درجة', done: true },
+    { id: 'm3', day: 'اليوم 7–10', title: 'الفصل الثالث: التيار المتناوب (التوالي، الرنين الكهربائي، والتوازي)', weight: '25 درجة', done: false },
+    { id: 'm4', day: 'اليوم 11–14', title: 'الفصل الرابع والخامس: الموجات الكهرومغناطيسية وشقي يونغ والحيود', weight: '25 درجة', done: false },
+    { id: 'm5', day: 'اليوم 15–18', title: 'الفصل السادس والسابع: الظاهرة الكهروضوئية والترانزستور', weight: '25 درجة', done: false },
+    { id: 'm6', day: 'اليوم 19–21', title: 'الفصل الثامن والتاسع + امتحان وزاري شامل (الأطياف والليزر والنووية)', weight: '25 درجة', done: false }
+  ],
+
+  // Syllabus, 10-Step Loop & Podcast
   activeSyllabusChapterId: 'ch1',
+  activeLoopStep: 1,
+  podcastPlaying: false,
+  podcastLineIndex: 0,
+  podcastTimer: null,
+
+  // Solver & Lab Challenge HUD
   activeProblemIndex: 0,
   unlockedStepIndex: 0,
   completedSteps: {},
   simRunning: true,
+  simSpeed: 1,
   simTime: 0,
+  labMode: 'explore', // 'explore' | 'challenge'
+  completedChallenges: {},
+
+  // Upgrade 2: Mock Exams (Oral & Written)
+  mockTab: 'oral', // 'oral' | 'written'
+  oralQuestionIndex: 0,
+  oralListening: false,
+  oralTranscript: '',
+  oralEvaluation: null,
+  writtenTimeSeconds: 180 * 60,
+  writtenTimerRunning: false,
+  writtenSubmitted: false,
+  writtenAnswers: {},
+
+  // Upgrade 3C: Spaced Repetition Mistake Bank
+  mistakesBank: [
+    {
+      id: 'err-1',
+      chapter: 'الفصل الأول: المتسعات',
+      note: 'نسيان ضرب السعة في 10⁻⁶ عند حساب الطاقة المختزنة PE = ½ C (ΔV)² بالجول.',
+      mastered: false
+    },
+    {
+      id: 'err-2',
+      chapter: 'الفصل الثاني: الحث الكهرومغناطيسي',
+      note: 'أخذ الزاوية مع مستوى الملف بدلاً من المتممة (90° - θ) مع متجه المساحة في قانون فرداي.',
+      mastered: false
+    },
+    {
+      id: 'err-3',
+      chapter: 'الفصل السادس: الفيزياء الحديثة',
+      note: 'توحيد وحدات طاقة الفوتون E ودالة الشغل W بالتحويل من eV إلى J بالضرب في 1.6×10⁻¹⁹.',
+      mastered: false
+    }
+  ],
+
+  // Practise & Streak
   activeStudyMode: 'quiz',
   flashcardIndex: 0,
   flashcardFlipped: false,
@@ -661,14 +926,22 @@ const state = {
   chatHistory: [
     {
       role: 'tutor',
-      text: 'أهلاً بك يا بطل السادس العلمي! 🇮🇶✨ أنا مساعدك الذكي لفيزياء السادس العلمي. اختر أي فصل من الفصول الثمانية، أو جرب حل المسائل الوزارية خطوة بخطوة، أو اسألني أي تعليل أو قانون (مثل: "متى تكون الدائرة في حالة رنين؟" أو "ماذا يحصل عند إدخال عازل؟").'
+      text: 'أهلاً بك يا بطل السادس العلمي! 🇮🇶✨ تم تفعيل جميع أدوات Astra AI: خطة الإنقاذ للامتحان الوزاري، بودكاست الفصول، حلال المسائل المخصص بأرقامك، والامتحان الشفهي الصوتي والتحريري!'
     }
-  ]
+  ],
+
+  // Upgrade 6: Teacher Worksheet Config
+  worksheetChapterId: 'ch1',
+  worksheetIncludeEquations: true,
+  worksheetIncludeGolden: true,
+  worksheetIncludeProblems: true
 };
 
 function saveProgress() {
-  localStorage.setItem('astra_physics_streak', JSON.stringify(state.streakDays));
-  localStorage.setItem('astra_physics_xp', String(state.xp));
+  try {
+    localStorage.setItem('astra_physics_streak', JSON.stringify(state.streakDays));
+    localStorage.setItem('astra_physics_xp', String(state.xp));
+  } catch (_) {}
   const xpEl = document.getElementById('header-xp-badge');
   if (xpEl) xpEl.textContent = `${state.xp} XP · 🔥 ${state.streakDays.filter(Boolean).length}d Streak`;
 }
@@ -687,10 +960,126 @@ function renderLatexInElement(el) {
 }
 
 // ============================================================================
-// 1. Complete Iraqi 6th Scientific Syllabus & Equations Atlas (#syllabus)
+// UPGRADE 1: "Panic-to-Ready" Ministerial Exam Countdown & Study Planner
 // ============================================================================
+function renderExamPrepPlanner() {
+  const daysSlider = document.getElementById('planner-days-slider');
+  const daysLabel = document.getElementById('planner-days-label');
+  const targetSlider = document.getElementById('planner-target-slider');
+  const targetLabel = document.getElementById('planner-target-label');
+  const sourcesGrid = document.getElementById('planner-sources-grid');
+  const missionsList = document.getElementById('planner-missions-list');
+  const readinessPill = document.getElementById('planner-readiness-pill');
+  const trajBar = document.getElementById('planner-trajectory-bar');
+  const trajText = document.getElementById('planner-trajectory-text');
+
+  if (!missionsList || !sourcesGrid) return;
+
+  const doneCount = state.plannerMissions.filter((m) => m.done).length;
+  const activeSrcCount = state.plannerSources.filter((s) => s.active).length;
+  const readinessPct = Math.min(100, Math.round(35 + (doneCount / state.plannerMissions.length) * 55 + activeSrcCount * 2.5));
+
+  if (daysLabel) daysLabel.textContent = `${state.examDaysRemaining} يوم`;
+  if (targetLabel) targetLabel.textContent = `${state.examTargetScore} / 100`;
+  if (readinessPill) readinessPill.textContent = `الجاهزية الحالية: ${readinessPct}%`;
+  if (trajBar) trajBar.style.width = `${readinessPct}%`;
+  if (trajText) trajText.textContent = `${readinessPct}% ← ${state.examTargetScore}% خلال ${state.examDaysRemaining} يوم`;
+
+  sourcesGrid.innerHTML = state.plannerSources.map((src, idx) => `
+    <button type="button" data-src-idx="${idx}"
+      class="p-2.5 rounded-xl border text-right text-xs font-semibold transition cursor-pointer flex items-center justify-between gap-2 ${
+        src.active
+          ? 'border-[#5b6bff] bg-[#4353f3]/20 text-white'
+          : 'border-white/10 bg-white/5 text-[#8a9bad] hover:text-white'
+      }">
+      <span>${src.label}</span>
+      <span>${src.active ? '✓' : '+'}</span>
+    </button>
+  `).join('');
+
+  sourcesGrid.querySelectorAll('[data-src-idx]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.getAttribute('data-src-idx'), 10);
+      state.plannerSources[idx].active = !state.plannerSources[idx].active;
+      renderExamPrepPlanner();
+    });
+  });
+
+  const sliceDays = Math.max(1, Math.floor(state.examDaysRemaining / state.plannerMissions.length));
+  missionsList.innerHTML = state.plannerMissions.map((m, idx) => {
+    const startDay = idx * sliceDays + 1;
+    const endDay = idx === state.plannerMissions.length - 1 ? state.examDaysRemaining : (idx + 1) * sliceDays;
+    return `
+      <div class="rounded-2xl border ${m.done ? 'border-emerald-500/40 bg-emerald-950/15' : 'border-white/10 bg-black/40'} p-3.5 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <button type="button" data-mission-idx="${idx}"
+            class="size-7 rounded-xl font-mono text-xs font-bold flex items-center justify-center cursor-pointer transition ${
+              m.done ? 'bg-emerald-500 text-black' : 'bg-white/10 text-white hover:bg-[#4353f3]'
+            }">
+            ${m.done ? '✓' : idx + 1}
+          </button>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[11px] text-[#8b98ff]">الأيام ${startDay}–${endDay}</span>
+              <span class="font-mono text-[10px] bg-amber-500/15 text-amber-300 px-2 py-0.5 rounded-full">${m.weight}</span>
+            </div>
+            <div class="text-xs sm:text-sm font-semibold ${m.done ? 'line-through text-[#8a9bad]' : 'text-white'}">${m.title}</div>
+          </div>
+        </div>
+        <span class="font-mono text-[11px] ${m.done ? 'text-emerald-400' : 'text-[#8a9bad]'}">${m.done ? 'مكتمل +30 XP' : 'قيد الإنجاز'}</span>
+      </div>
+    `;
+  }).join('');
+
+  missionsList.querySelectorAll('[data-mission-idx]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.getAttribute('data-mission-idx'), 10);
+      state.plannerMissions[idx].done = !state.plannerMissions[idx].done;
+      if (state.plannerMissions[idx].done) {
+        state.xp += 30;
+        saveProgress();
+        renderParentTeacherHub();
+      }
+      renderExamPrepPlanner();
+    });
+  });
+
+  if (daysSlider && !daysSlider.dataset.bound) {
+    daysSlider.dataset.bound = 'true';
+    daysSlider.addEventListener('input', () => {
+      state.examDaysRemaining = parseInt(daysSlider.value, 10);
+      renderExamPrepPlanner();
+    });
+  }
+  if (targetSlider && !targetSlider.dataset.bound) {
+    targetSlider.dataset.bound = 'true';
+    targetSlider.addEventListener('input', () => {
+      state.examTargetScore = parseInt(targetSlider.value, 10);
+      renderExamPrepPlanner();
+    });
+  }
+}
+
+// ============================================================================
+// UPGRADE 3A & 3B: Syllabus Atlas + 10-Stage Mastery Loop + 2-Host Topic Podcast
+// ============================================================================
+const TEN_STAGE_LOOP_STEPS = [
+  { num: 1, title: 'الدرس الموجه', icon: '🧭' },
+  { num: 2, title: 'الملزمة الذكية', icon: '📄' },
+  { num: 3, title: 'بودكاست الفصل', icon: '🎧' },
+  { num: 4, title: 'بطاقات التعاليل', icon: '🗂️' },
+  { num: 5, title: 'صح أم خطأ', icon: '⚡' },
+  { num: 6, title: 'كويز وزاري', icon: '🎯' },
+  { num: 7, title: 'حل المسائل', icon: '📐' },
+  { num: 8, title: 'التكرار المتباعد', icon: '🔁' },
+  { num: 9, title: 'رادار الفجوات', icon: '📡' },
+  { num: 10, title: 'الامتحان الشفهي/التحريري', icon: '🏆' }
+];
+
 function renderSyllabusAtlas() {
   const tabsEl = document.getElementById('syllabus-chapter-tabs');
+  const loopEl = document.getElementById('chapter-10step-loop');
+  const podcastEl = document.getElementById('chapter-podcast-player');
   const detailEl = document.getElementById('syllabus-chapter-detail');
   if (!tabsEl || !detailEl) return;
 
@@ -709,6 +1098,129 @@ function renderSyllabusAtlas() {
   }).join('');
 
   const ch = IRAQI_SYLLABUS_CHAPTERS.find((c) => c.id === state.activeSyllabusChapterId) || IRAQI_SYLLABUS_CHAPTERS[0];
+
+  // Render 10-Stage Chapter Mastery Loop
+  if (loopEl) {
+    loopEl.innerHTML = `
+      <div class="home-card-shell rounded-[28px] p-5 rtl-block">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-xs uppercase text-[#8b98ff]">Astra 10-Step Adaptive Loop</span>
+            <span class="text-sm font-bold text-white">حلقة الإتقان الكامل (${ch.titleAr})</span>
+          </div>
+          <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
+            نسبة إتقان الفصل: ${ch.masteryPct}%
+          </span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-2">
+          ${TEN_STAGE_LOOP_STEPS.map((st) => {
+            const isActive = st.num === state.activeLoopStep;
+            return `
+              <button type="button" data-loop-step="${st.num}"
+                class="p-2.5 rounded-2xl border text-center transition cursor-pointer flex flex-col items-center gap-1 ${
+                  isActive
+                    ? 'border-[#5b6bff] bg-[#4353f3]/25 text-white shadow-md'
+                    : 'border-white/10 bg-black/40 text-[#8a9bad] hover:text-white hover:border-white/25'
+                }">
+                <span class="text-lg">${st.icon}</span>
+                <span class="font-mono text-[10px] opacity-75">0${st.num}</span>
+                <span class="text-[11px] font-semibold leading-tight">${st.title}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+    loopEl.querySelectorAll('[data-loop-step]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const stepNum = parseInt(btn.getAttribute('data-loop-step'), 10);
+        state.activeLoopStep = stepNum;
+        if (stepNum === 3) {
+          togglePodcastPlayback(true);
+        } else if (stepNum === 4 || stepNum === 5 || stepNum === 6 || stepNum === 8) {
+          document.getElementById('practise')?.scrollIntoView({ behavior: 'smooth' });
+        } else if (stepNum === 7) {
+          document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+        } else if (stepNum === 9) {
+          document.getElementById('mastery-journey')?.scrollIntoView({ behavior: 'smooth' });
+        } else if (stepNum === 10) {
+          document.getElementById('mock-exams')?.scrollIntoView({ behavior: 'smooth' });
+        }
+        renderSyllabusAtlas();
+      });
+    });
+  }
+
+  // Render 2-Host Conversational Arabic Physics Podcast Player
+  if (podcastEl) {
+    const lines = ch.podcast || [];
+    podcastEl.innerHTML = `
+      <div class="home-card-shell rounded-[28px] p-5 lg:p-6 rtl-block ${state.podcastPlaying ? 'podcast-playing border-[#5b6bff]/50' : ''}">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-3">
+            <div class="size-11 rounded-2xl home-ramp-fill flex items-center justify-center text-xl shadow-lg">🎧</div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-[11px] uppercase tracking-wider text-amber-300">بودكاست الفيزياء الحواري · Topic Podcast</span>
+                <div class="flex items-end gap-1 h-4">
+                  <span class="podcast-eq-bar"></span>
+                  <span class="podcast-eq-bar"></span>
+                  <span class="podcast-eq-bar"></span>
+                  <span class="podcast-eq-bar"></span>
+                </div>
+              </div>
+              <h4 class="text-base lg:text-lg font-bold text-white">حوار الأستاذ باقر وسارة: خلاصة وأسرار ${ch.titleAr}</h4>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button type="button" id="btn-podcast-toggle"
+              class="home-ramp-fill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white shadow cursor-pointer">
+              ${state.podcastPlaying ? '⏸ إيقاف البودكاست' : '▶ استمع لحلقة الفصل (صوت حي)'}
+            </button>
+            <button type="button" id="btn-podcast-next-line"
+              class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-xs font-semibold text-[#c9cfff] cursor-pointer">
+              الفقرة التالية ⏭
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 max-h-[210px] overflow-y-auto pr-1">
+          ${lines.map((line, idx) => {
+            const activeLine = idx === state.podcastLineIndex;
+            return `
+              <div data-podcast-line="${idx}"
+                class="p-3 rounded-xl border transition cursor-pointer ${
+                  activeLine
+                    ? 'border-[#5b6bff] bg-[#4353f3]/20 text-white'
+                    : 'border-white/5 bg-black/40 text-[#a3a3ac] hover:bg-white/5'
+                }">
+                <span class="font-mono text-xs font-bold ${line.role === 'host' ? 'text-amber-300' : 'text-emerald-300'} ml-2">
+                  ${line.speaker}:
+                </span>
+                <span class="text-xs sm:text-sm leading-relaxed">${line.text}</span>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+
+    podcastEl.querySelector('#btn-podcast-toggle')?.addEventListener('click', () => {
+      togglePodcastPlayback(!state.podcastPlaying);
+    });
+    podcastEl.querySelector('#btn-podcast-next-line')?.addEventListener('click', () => {
+      state.podcastLineIndex = (state.podcastLineIndex + 1) % lines.length;
+      if (state.podcastPlaying) speakCurrentPodcastLine();
+      renderSyllabusAtlas();
+    });
+    podcastEl.querySelectorAll('[data-podcast-line]').forEach((row) => {
+      row.addEventListener('click', () => {
+        state.podcastLineIndex = parseInt(row.getAttribute('data-podcast-line'), 10);
+        togglePodcastPlayback(true);
+      });
+    });
+  }
 
   detailEl.innerHTML = `
     <div class="home-card-shell rounded-[36px] p-6 lg:p-10">
@@ -758,13 +1270,470 @@ function renderSyllabusAtlas() {
   tabsEl.querySelectorAll('[data-ch-id]').forEach((btn) => {
     btn.addEventListener('click', () => {
       state.activeSyllabusChapterId = btn.getAttribute('data-ch-id');
+      state.podcastLineIndex = 0;
+      if (state.podcastPlaying) togglePodcastPlayback(false);
       renderSyllabusAtlas();
     });
   });
 }
 
+function speakCurrentPodcastLine() {
+  const ch = IRAQI_SYLLABUS_CHAPTERS.find((c) => c.id === state.activeSyllabusChapterId) || IRAQI_SYLLABUS_CHAPTERS[0];
+  const lines = ch.podcast || [];
+  const line = lines[state.podcastLineIndex];
+  if (!line) return;
+
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(line.text);
+    utter.lang = 'ar-SA';
+    utter.pitch = line.role === 'host' ? 0.95 : 1.18;
+    utter.rate = 1.02;
+    utter.onend = () => {
+      if (!state.podcastPlaying) return;
+      if (state.podcastLineIndex < lines.length - 1) {
+        state.podcastLineIndex++;
+        renderSyllabusAtlas();
+        speakCurrentPodcastLine();
+      } else {
+        state.podcastPlaying = false;
+        renderSyllabusAtlas();
+      }
+    };
+    window.speechSynthesis.speak(utter);
+  }
+}
+
+function togglePodcastPlayback(play) {
+  state.podcastPlaying = play;
+  if (state.podcastTimer) {
+    clearInterval(state.podcastTimer);
+    state.podcastTimer = null;
+  }
+  if (!play) {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    renderSyllabusAtlas();
+    return;
+  }
+  state.xp += 15;
+  saveProgress();
+  renderSyllabusAtlas();
+  speakCurrentPodcastLine();
+}
+
 // ============================================================================
-// 2. Tutoring Methods Section (#tutoring-methods)
+// UPGRADE 2: Dual-Mode Realistic Mock Exams (Voice Oral + Timed Written)
+// ============================================================================
+function renderMockExamsSection() {
+  const tabOral = document.getElementById('tab-btn-oral');
+  const tabWritten = document.getElementById('tab-btn-written');
+  const panelOral = document.getElementById('mock-oral-panel');
+  const panelWritten = document.getElementById('mock-written-panel');
+  if (!panelOral || !panelWritten) return;
+
+  if (state.mockTab === 'oral') {
+    tabOral?.classList.add('home-ramp-fill', 'text-white');
+    tabOral?.classList.remove('text-[#8a9bad]');
+    tabWritten?.classList.remove('home-ramp-fill', 'text-white');
+    tabWritten?.classList.add('text-[#8a9bad]');
+    panelOral.classList.remove('hidden');
+    panelWritten.classList.add('hidden');
+    renderOralMockPanel(panelOral);
+  } else {
+    tabWritten?.classList.add('home-ramp-fill', 'text-white');
+    tabWritten?.classList.remove('text-[#8a9bad]');
+    tabOral?.classList.remove('home-ramp-fill', 'text-white');
+    tabOral?.classList.add('text-[#8a9bad]');
+    panelWritten.classList.remove('hidden');
+    panelOral.classList.add('hidden');
+    renderWrittenMockPanel(panelWritten);
+  }
+}
+
+function evaluateOralAnswer(questionObj, userText) {
+  const clean = (userText || '').trim();
+  if (!clean) return null;
+  const matched = [];
+  const missed = [];
+  questionObj.keywords.forEach((kw) => {
+    const root = kw.replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه');
+    const normUser = clean.replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه');
+    if (normUser.includes(root) || clean.includes(kw)) {
+      matched.push(kw);
+    } else {
+      missed.push(kw);
+    }
+  });
+  const score = Math.max(2, Math.round((matched.length / questionObj.keywords.length) * 10));
+  return { score, matched, missed };
+}
+
+function renderOralMockPanel(panel) {
+  const qObj = ORAL_MOCK_QUESTIONS[state.oralQuestionIndex % ORAL_MOCK_QUESTIONS.length];
+  panel.innerHTML = `
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <!-- Left 5 Cols: Animated AI Listening Sphere Orb -->
+      <div class="lg:col-span-5 flex flex-col items-center text-center gap-4 p-6 rounded-3xl bg-black/50 border border-white/10">
+        <div class="relative flex items-center justify-center my-2">
+          <div class="ai-sphere-pulse absolute size-36 rounded-full border border-[#5b6bff]/50"></div>
+          <div class="ai-sphere-orb ${state.oralListening ? 'listening' : ''} size-28 rounded-full flex items-center justify-center text-3xl">
+            ${state.oralListening ? '🎙️' : '🔊'}
+          </div>
+        </div>
+        <div class="font-mono text-xs uppercase tracking-wider ${state.oralListening ? 'text-emerald-400' : 'text-[#8b98ff]'}">
+          ${state.oralListening ? '● أستمع لإجابتك الآن... تكلم بوضوح' : 'Astra Voice Oral Examiner · جاهز للسؤال'}
+        </div>
+        <p class="text-xs text-[#8a9bad] max-w-xs">
+          اضغط "استمع للسؤال بصوت المدرب" ثم أجب بصوتك عبر المايكروفون أو اكتب إجابتك ليقوم المصحح الوزاري بفحص الكلمات المفتاحية:
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 w-full">
+          <button type="button" id="btn-oral-speak-q"
+            class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-xs font-semibold text-white cursor-pointer">
+            🔊 استمع للسؤال بصوت المدرب
+          </button>
+          <button type="button" id="btn-oral-mic"
+            class="${state.oralListening ? 'bg-emerald-500 text-black' : 'home-ramp-fill text-white'} px-5 py-2.5 rounded-xl text-xs font-bold cursor-pointer shadow-lg">
+            ${state.oralListening ? '⏹ إيقاف التسجيل وتصحيح الإجابة' : '🎤 أجب بصوتك (المايكروفون)'}
+          </button>
+        </div>
+      </div>
+
+      <!-- Right 7 Cols: Question, Live Transcript & Keyword Rubric Breakdown -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-xs text-amber-300 bg-amber-500/15 border border-amber-400/30 px-3 py-1 rounded-full">
+            ${qObj.chapter} · سؤال شفهي ${(state.oralQuestionIndex % ORAL_MOCK_QUESTIONS.length) + 1} من ${ORAL_MOCK_QUESTIONS.length}
+          </span>
+          <button type="button" id="btn-oral-next" class="text-xs font-semibold text-[#c9cfff] hover:underline cursor-pointer">
+            السؤال الشفهي التالي ←
+          </button>
+        </div>
+
+        <h3 class="text-lg lg:text-2xl font-bold text-white leading-relaxed">${qObj.question}</h3>
+
+        <div>
+          <label class="block text-xs text-[#8a9bad] mb-1.5">إجابتك الصوتية المحولة لنص (أو اكتب/عدل إجابتك هنا):</label>
+          <textarea id="oral-answer-textarea" rows="3"
+            placeholder="تحدث بالمايكروفون أو اكتب تعليلك العلمي هنا..."
+            class="w-full rounded-2xl bg-black/70 border border-white/15 p-3.5 text-sm text-white placeholder-[#8a9bad]/50 focus:outline-none focus:border-[#5b6bff]">${state.oralTranscript}</textarea>
+        </div>
+
+        <div class="flex flex-wrap gap-2.5">
+          <button type="button" id="btn-oral-grade"
+            class="home-ramp-fill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white cursor-pointer">
+            ✓ قيم إجابتي الشفهية الآن (من 10)
+          </button>
+          <button type="button" id="btn-oral-fill-model"
+            class="px-4 py-2.5 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-xs font-semibold text-[#c9cfff] cursor-pointer">
+            💡 محاكاة إجابة طالب نموذجية
+          </button>
+        </div>
+
+        ${
+          state.oralEvaluation
+            ? `
+            <div class="rounded-2xl border ${state.oralEvaluation.score >= 7 ? 'border-emerald-500/40 bg-emerald-950/20' : 'border-amber-500/40 bg-amber-950/20'} p-4 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm ${state.oralEvaluation.score >= 7 ? 'text-emerald-300' : 'text-amber-300'}">
+                  درجة الإجابة الشفهية: ${state.oralEvaluation.score} / 10
+                </span>
+                <span class="font-mono text-xs text-white/70">تحليل مصحح الكلمات المفتاحية الوزارية</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 text-xs">
+                ${state.oralEvaluation.matched.map((k) => `<span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300">✓ ذكرت: ${k}</span>`).join('')}
+                ${state.oralEvaluation.missed.map((k) => `<span class="px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-400/40 text-rose-300">✗ فاتك ذكر: ${k}</span>`).join('')}
+              </div>
+              <div class="text-xs text-white/90 pt-1 border-t border-white/10 leading-relaxed">
+                <strong class="text-[#c9cfff]">الجواب الوزاري النموذجي الكامل:</strong> ${qObj.modelAnswer}
+              </div>
+            </div>
+          `
+            : ''
+        }
+      </div>
+    </div>
+  `;
+
+  panel.querySelector('#btn-oral-speak-q')?.addEventListener('click', () => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(qObj.question);
+      u.lang = 'ar-SA';
+      window.speechSynthesis.speak(u);
+    }
+  });
+
+  panel.querySelector('#btn-oral-mic')?.addEventListener('click', () => {
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!state.oralListening) {
+      state.oralListening = true;
+      renderOralMockPanel(panel);
+      if (SpeechRec) {
+        try {
+          const rec = new SpeechRec();
+          rec.lang = 'ar-IQ';
+          rec.interimResults = false;
+          rec.onresult = (e) => {
+            const spoken = e.results?.[0]?.[0]?.transcript || '';
+            state.oralTranscript = spoken;
+            state.oralListening = false;
+            state.oralEvaluation = evaluateOralAnswer(qObj, state.oralTranscript);
+            renderOralMockPanel(panel);
+          };
+          rec.onerror = () => {
+            state.oralListening = false;
+            renderOralMockPanel(panel);
+          };
+          rec.start();
+        } catch (_) {}
+      }
+    } else {
+      state.oralListening = false;
+      const ta = document.getElementById('oral-answer-textarea');
+      state.oralTranscript = ta?.value || qObj.modelAnswer;
+      state.oralEvaluation = evaluateOralAnswer(qObj, state.oralTranscript);
+      renderOralMockPanel(panel);
+    }
+  });
+
+  panel.querySelector('#btn-oral-grade')?.addEventListener('click', () => {
+    const ta = document.getElementById('oral-answer-textarea');
+    state.oralTranscript = ta?.value || '';
+    state.oralEvaluation = evaluateOralAnswer(qObj, state.oralTranscript);
+    if (state.oralEvaluation) {
+      state.xp += state.oralEvaluation.score * 3;
+      if (state.oralEvaluation.missed.length > 0) {
+        addMistakeToBank(qObj.chapter, `سؤال شفهي: ${qObj.question} — تذكر الكلمات المفتاحية: (${state.oralEvaluation.missed.join('، ')})`);
+      }
+      saveProgress();
+    }
+    renderOralMockPanel(panel);
+  });
+
+  panel.querySelector('#btn-oral-fill-model')?.addEventListener('click', () => {
+    state.oralTranscript = qObj.modelAnswer;
+    state.oralEvaluation = evaluateOralAnswer(qObj, state.oralTranscript);
+    renderOralMockPanel(panel);
+  });
+
+  panel.querySelector('#btn-oral-next')?.addEventListener('click', () => {
+    state.oralQuestionIndex++;
+    state.oralTranscript = '';
+    state.oralEvaluation = null;
+    state.oralListening = false;
+    renderOralMockPanel(panel);
+  });
+}
+
+function renderWrittenMockPanel(panel) {
+  const mins = Math.floor(state.writtenTimeSeconds / 60);
+  const secs = state.writtenTimeSeconds % 60;
+  const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+  let totalScore = 0;
+  WRITTEN_EXAM_PAPER.forEach((q, idx) => {
+    const ans = parseFloat(state.writtenAnswers[idx]);
+    if (!Number.isNaN(ans) && Math.abs(ans - q.expected) <= Math.max(0.1, q.expected * 0.03)) {
+      totalScore += 20;
+    }
+  });
+
+  panel.innerHTML = `
+    <div class="space-y-6">
+      <!-- Official Iraqi Ministerial Header -->
+      <div class="rounded-2xl border border-amber-400/40 bg-black/60 p-5 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div class="font-mono text-xs text-amber-300">جمهورية العراق · وزارة التربية · اللجنة الدائمة للامتحانات العامة</div>
+          <h3 class="text-xl lg:text-2xl font-bold text-white mt-1">ورقة الامتحان الوزاري التجريبي — فيزياء السادس العلمي (100 درجة)</h3>
+          <p class="text-xs text-[#8a9bad]">أجب عن جميع الأسئلة الخمسة الآتية (لكل سؤال 20 درجة موزعة على القانون والتعويض والناتج):</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="rounded-2xl bg-white/5 border border-white/15 px-4 py-2 text-center">
+            <span class="block text-[10px] text-[#8a9bad]">الوقت المتبقي</span>
+            <span id="written-timer-display" class="font-mono text-lg font-bold text-amber-300 ltr-math">${timeStr}</span>
+          </div>
+          <button type="button" id="btn-written-submit"
+            class="home-ramp-fill px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold text-white cursor-pointer shadow-lg">
+            📝 تسليم الورقة والتصحيح الفوري
+          </button>
+        </div>
+      </div>
+
+      ${
+        state.writtenSubmitted
+          ? `
+          <div class="rounded-2xl border ${totalScore >= 80 ? 'border-emerald-500/50 bg-emerald-950/25' : 'border-amber-500/50 bg-amber-950/25'} p-5 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="text-lg lg:text-2xl font-bold text-white">نتيجتك في الامتحان الوزاري التجريبي: <span class="text-emerald-400">${totalScore} / 100</span></div>
+              <p class="text-xs text-[#c9cfff] mt-1">تمت إضافة أي سؤال غير متقن تلقائياً إلى "بنك الأخطاء والمراجعة المتباعدة" أسفل الصفحة!</p>
+            </div>
+            <button type="button" id="btn-written-reset" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-xs font-semibold text-white cursor-pointer">
+              إعادة الامتحان
+            </button>
+          </div>
+        `
+          : ''
+      }
+
+      <!-- 5 Ministerial Questions -->
+      <div class="space-y-4">
+        ${WRITTEN_EXAM_PAPER.map((q, idx) => {
+          const userVal = state.writtenAnswers[idx] ?? '';
+          const numVal = parseFloat(userVal);
+          const isCorrect = !Number.isNaN(numVal) && Math.abs(numVal - q.expected) <= Math.max(0.1, q.expected * 0.03);
+          return `
+            <div class="rounded-2xl border border-white/10 bg-black/40 p-5 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-amber-300">${q.qNum}</span>
+                <span class="font-mono text-xs text-[#8b98ff]">${q.chapter}</span>
+              </div>
+              <p class="text-sm lg:text-base text-white leading-relaxed">${q.text}</p>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                <div class="relative flex-1 max-w-xs">
+                  <input type="number" step="any" data-written-idx="${idx}"
+                    value="${userVal}"
+                    placeholder="اكتب الناتج النهائي هنا..."
+                    class="w-full rounded-xl bg-black/70 border border-white/15 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#5b6bff]" />
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-xs text-[#8a9bad] ltr-math">${q.unit}</span>
+                </div>
+                ${
+                  state.writtenSubmitted
+                    ? `<span class="font-mono text-xs font-bold ${isCorrect ? 'text-emerald-400' : 'text-rose-400'}">
+                        ${isCorrect ? '✓ إجابة وزارية صحيحة (20 / 20)' : `✗ الجواب الصحيح: ${q.expected} ${q.unit}`}
+                      </span>`
+                    : ''
+                }
+              </div>
+              ${
+                state.writtenSubmitted
+                  ? `<div class="rounded-xl bg-white/5 border border-white/10 p-3 text-xs text-[#c9cfff]">
+                      <strong>الحل النموذجي لمركز الفحص:</strong> ${q.solution}
+                    </div>`
+                  : ''
+              }
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+
+  panel.querySelectorAll('[data-written-idx]').forEach((inp) => {
+    inp.addEventListener('input', () => {
+      const idx = parseInt(inp.getAttribute('data-written-idx'), 10);
+      state.writtenAnswers[idx] = inp.value;
+    });
+  });
+
+  panel.querySelector('#btn-written-submit')?.addEventListener('click', () => {
+    state.writtenSubmitted = true;
+    WRITTEN_EXAM_PAPER.forEach((q, idx) => {
+      const ans = parseFloat(state.writtenAnswers[idx]);
+      const ok = !Number.isNaN(ans) && Math.abs(ans - q.expected) <= Math.max(0.1, q.expected * 0.03);
+      if (!ok) {
+        addMistakeToBank(q.chapter, `${q.qNum}: ${q.solution}`);
+      } else {
+        state.xp += 25;
+      }
+    });
+    saveProgress();
+    renderWrittenMockPanel(panel);
+    renderKnowledgeGapAndMistakes();
+    renderParentTeacherHub();
+  });
+
+  panel.querySelector('#btn-written-reset')?.addEventListener('click', () => {
+    state.writtenSubmitted = false;
+    state.writtenAnswers = {};
+    renderWrittenMockPanel(panel);
+  });
+}
+
+// ============================================================================
+// UPGRADE 3C: Knowledge Gap Radar & Spaced Repetition Mistake Bank
+// ============================================================================
+function addMistakeToBank(chapter, note) {
+  if (state.mistakesBank.some((m) => m.note === note)) return;
+  state.mistakesBank.unshift({
+    id: 'err-' + Date.now(),
+    chapter,
+    note,
+    mastered: false
+  });
+  renderKnowledgeGapAndMistakes();
+}
+
+function renderKnowledgeGapAndMistakes() {
+  const barsEl = document.getElementById('knowledge-gap-bars');
+  const overallBadge = document.getElementById('overall-mastery-badge');
+  const mistakeListEl = document.getElementById('mistake-bank-list');
+  const mistakeBadge = document.getElementById('mistake-count-badge');
+  if (!barsEl || !mistakeListEl) return;
+
+  const avgMastery = Math.round(
+    IRAQI_SYLLABUS_CHAPTERS.reduce((acc, c) => acc + c.masteryPct, 0) / IRAQI_SYLLABUS_CHAPTERS.length
+  );
+  if (overallBadge) overallBadge.textContent = `متوسط الإتقان العام: ${avgMastery}%`;
+
+  barsEl.innerHTML = IRAQI_SYLLABUS_CHAPTERS.map((ch) => {
+    const colorClass = ch.masteryPct >= 75 ? 'bg-emerald-500' : ch.masteryPct >= 65 ? 'bg-[#5b6bff]' : 'bg-amber-400';
+    return `
+      <div class="rounded-2xl bg-black/40 border border-white/10 p-3.5">
+        <div class="flex items-center justify-between text-xs mb-1.5">
+          <span class="font-bold text-white">${ch.titleAr}</span>
+          <span class="font-mono font-bold ${ch.masteryPct < 68 ? 'text-amber-300' : 'text-emerald-300'}">${ch.masteryPct}% ${ch.masteryPct < 68 ? '⚠️ يحتاج تقوية' : '✓ جيد جداً'}</span>
+        </div>
+        <div class="w-full h-2.5 rounded-full bg-white/10 overflow-hidden mb-2">
+          <div class="h-full rounded-full ${colorClass}" style="width: ${ch.masteryPct}%"></div>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          ${(ch.subSkills || []).map((sk) => `
+            <span class="text-[11px] px-2.5 py-0.5 rounded-full border ${
+              sk.pct < 70
+                ? 'border-amber-400/40 bg-amber-500/10 text-amber-200'
+                : 'border-white/10 bg-white/5 text-[#a3a3ac]'
+            }">
+              ${sk.name}: ${sk.pct}%
+            </span>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const activeMistakes = state.mistakesBank.filter((m) => !m.mastered);
+  if (mistakeBadge) mistakeBadge.textContent = `${activeMistakes.length} نقاط للمراجعة`;
+
+  mistakeListEl.innerHTML = state.mistakesBank.map((m, idx) => `
+    <div class="rounded-2xl border ${m.mastered ? 'border-emerald-500/30 bg-emerald-950/10 opacity-60' : 'border-amber-400/30 bg-black/50'} p-3.5 space-y-2">
+      <div class="flex items-center justify-between">
+        <span class="font-mono text-[11px] text-amber-300">${m.chapter}</span>
+        <button type="button" data-mistake-idx="${idx}"
+          class="px-2.5 py-1 rounded-lg text-[11px] font-semibold cursor-pointer ${
+            m.mastered ? 'bg-emerald-500/20 text-emerald-300' : 'home-ramp-fill text-white'
+          }">
+          ${m.mastered ? '✓ تم إتقانها' : 'أتقنتها الآن (+20 XP)'}
+        </button>
+      </div>
+      <p class="text-xs text-white leading-relaxed">${m.note}</p>
+    </div>
+  `).join('');
+
+  mistakeListEl.querySelectorAll('[data-mistake-idx]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.getAttribute('data-mistake-idx'), 10);
+      state.mistakesBank[idx].mastered = !state.mistakesBank[idx].mastered;
+      if (state.mistakesBank[idx].mastered) {
+        state.xp += 20;
+        saveProgress();
+      }
+      renderKnowledgeGapAndMistakes();
+    });
+  });
+}
+
+// ============================================================================
+// Tutoring Methods Section (#tutoring-methods)
 // ============================================================================
 function renderTutoringMethods() {
   const container = document.getElementById('tutoring-methods-grid');
@@ -787,32 +1756,6 @@ function renderTutoringMethods() {
       </div>
     </div>
   `).join('');
-}
-
-// ============================================================================
-// 3. Interactive Bento Flip Cards
-// ============================================================================
-function initFlipCards() {
-  document.querySelectorAll('[data-flip-card]').forEach((card) => {
-    const btn = card.querySelector('.star-toggle-btn');
-    if (!btn) return;
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const expanded = card.getAttribute('data-expanded') === 'true';
-      card.setAttribute('data-expanded', String(!expanded));
-      btn.setAttribute('aria-expanded', String(!expanded));
-    });
-  });
-
-  document.querySelectorAll('[data-tutor-prompt]').forEach((chip) => {
-    chip.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const promptText = chip.getAttribute('data-tutor-prompt');
-      const targetEl = document.getElementById('how-it-works');
-      if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-      handleCustomProblemOrQuestion(promptText);
-    });
-  });
 }
 
 // ============================================================================
@@ -847,6 +1790,7 @@ function renderProblemSelector() {
       renderProblemSelector();
       renderSolverWorkspace();
       renderSimControls();
+      updateLabChallengeHUD();
     });
   });
 }
@@ -969,6 +1913,7 @@ function renderSolverWorkspace() {
       } else if (fbEl) {
         fbEl.classList.remove('hidden');
         fbEl.innerHTML = `<span class="text-amber-300 font-bold">حاول مرة أخرى!</span> راجع القانون وتحويل الوحدات. تلميح: ${step.hint}`;
+        addMistakeToBank(prob.badge, `${prob.title} — ${step.title}: ${step.hint}`);
       }
     });
   });
@@ -999,6 +1944,48 @@ function renderSolverWorkspace() {
   });
 }
 
+// ============================================================================
+// UPGRADE 4: Interactive Lab Challenge HUD ("Find It") & Contextual Tutor
+// ============================================================================
+function updateLabChallengeHUD() {
+  const prob = getActiveProblem();
+  const banner = document.getElementById('lab-challenge-banner');
+  const promptEl = document.getElementById('lab-challenge-prompt');
+  const statusEl = document.getElementById('lab-challenge-status');
+  const btnExplore = document.getElementById('btn-lab-mode-explore');
+  const btnChallenge = document.getElementById('btn-lab-mode-challenge');
+
+  if (!banner || !prob.challengeMission) return;
+
+  if (state.labMode === 'challenge') {
+    banner.classList.remove('hidden');
+    btnChallenge?.classList.add('bg-amber-500/25', 'border', 'border-amber-400/50');
+    btnExplore?.classList.remove('bg-[#4353f3]', 'text-white');
+    btnExplore?.classList.add('text-[#8a9bad]');
+  } else {
+    banner.classList.add('hidden');
+    btnExplore?.classList.add('bg-[#4353f3]', 'text-white');
+    btnChallenge?.classList.remove('bg-amber-500/25', 'border', 'border-amber-400/50');
+  }
+
+  if (promptEl) promptEl.textContent = prob.challengeMission.prompt;
+  const passed = prob.challengeMission.check(prob.simParams);
+  if (passed) {
+    if (!state.completedChallenges[prob.id]) {
+      state.completedChallenges[prob.id] = true;
+      state.xp += 50;
+      saveProgress();
+    }
+    if (statusEl) {
+      statusEl.textContent = '✓ اكتمل التحدي +50 XP!';
+      statusEl.className = 'font-mono text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500 text-black font-bold';
+    }
+  } else if (statusEl) {
+    statusEl.textContent = state.completedChallenges[prob.id] ? '✓ مكتمل سابقاً' : 'حرك المنزلقات للحل...';
+    statusEl.className = 'font-mono text-[11px] px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-200';
+  }
+}
+
 function renderSimControls() {
   const prob = getActiveProblem();
   const controlsEl = document.getElementById('sim-sliders-container');
@@ -1024,6 +2011,7 @@ function renderSimControls() {
       const labelEl = document.getElementById(`sim-val-${key}`);
       if (labelEl) labelEl.textContent = String(val);
       state.simTime = 0;
+      updateLabChallengeHUD();
     });
   });
 }
@@ -1042,7 +2030,7 @@ function startPhysicsCanvasLoop() {
     const dt = Math.min(0.05, (now - lastTs) / 1000);
     lastTs = now;
     if (state.simRunning) {
-      state.simTime += dt;
+      state.simTime += dt * state.simSpeed;
     }
 
     const w = canvas.width;
@@ -1074,10 +2062,8 @@ function startPhysicsCanvasLoop() {
       const qt = ceq * v;
       const pe1 = 0.5 * c1k * v * v * 1e-3; // mJ
 
-      // Draw parallel capacitor network + dielectric slab in C1
       ctx.strokeStyle = '#8b98ff';
       ctx.lineWidth = 2.5;
-      // Wires
       ctx.strokeRect(65, 50, w - 130, h - 100);
 
       // Battery on left
@@ -1092,21 +2078,18 @@ function startPhysicsCanvasLoop() {
       ctx.font = '600 11px "JetBrains Mono", monospace';
       ctx.fillText(`ΔV=${v}V`, 18, h / 2 + 4);
 
-      // Capacitor C1k (middle branch) with animated dielectric slab
       const c1x = w * 0.48;
       ctx.beginPath();
       ctx.strokeStyle = '#8b98ff';
       ctx.moveTo(c1x, 50); ctx.lineTo(c1x, h / 2 - 20);
       ctx.moveTo(c1x, h / 2 + 20); ctx.lineTo(c1x, h - 50);
       ctx.stroke();
-      // Plates
       ctx.strokeStyle = '#ffffff';
       ctx.lineWidth = 3.5;
       ctx.beginPath();
       ctx.moveTo(c1x - 28, h / 2 - 20); ctx.lineTo(c1x + 28, h / 2 - 20);
       ctx.moveTo(c1x - 28, h / 2 + 20); ctx.lineTo(c1x + 28, h / 2 + 20);
       ctx.stroke();
-      // Dielectric slab inside C1
       if (k > 1) {
         ctx.fillStyle = 'rgba(56, 189, 248, 0.38)';
         ctx.fillRect(c1x - 25, h / 2 - 17, 50, 34);
@@ -1117,7 +2100,6 @@ function startPhysicsCanvasLoop() {
       ctx.fillText(`C₁ₖ=${c1k}μF`, c1x - 32, 40);
       ctx.fillText(`Q₁ₖ=${q1k}μC`, c1x - 35, h - 30);
 
-      // Capacitor C2 (right branch)
       const c2x = w - 65;
       ctx.fillStyle = '#07080d';
       ctx.fillRect(c2x - 20, h / 2 - 20, 40, 40);
@@ -1142,7 +2124,6 @@ function startPhysicsCanvasLoop() {
       const iinst = (pct / 100) * iconst;
       const didt = (vapp - iinst * R) / L;
 
-      // Plot exponential current growth curve I(t) = I_const * (1 - e^(-Rt/L))
       const padL = 55;
       const padB = h - 42;
       const plotW = w - 90;
@@ -1154,7 +2135,6 @@ function startPhysicsCanvasLoop() {
       ctx.moveTo(padL, 30); ctx.lineTo(padL, padB); ctx.lineTo(w - 25, padB);
       ctx.stroke();
 
-      // Asymptote I_const
       ctx.save();
       ctx.setLineDash([5, 5]);
       ctx.strokeStyle = '#34d399';
@@ -1166,7 +2146,6 @@ function startPhysicsCanvasLoop() {
       ctx.font = '600 11px "JetBrains Mono", monospace';
       ctx.fillText(`I_const = ${iconst.toFixed(1)} A (100%)`, padL + 10, 38);
 
-      // Exponential curve
       ctx.strokeStyle = '#5b6bff';
       ctx.lineWidth = 3;
       ctx.beginPath();
@@ -1180,7 +2159,6 @@ function startPhysicsCanvasLoop() {
       }
       ctx.stroke();
 
-      // Highlight operating point at pct%
       const uPt = pct >= 99.5 ? 0.98 : -Math.log(1 - pct / 100) / 5;
       const clampedU = Math.min(0.98, Math.max(0, uPt));
       const ptX = padL + clampedU * plotW;
@@ -1199,7 +2177,7 @@ function startPhysicsCanvasLoop() {
       const omega = prob.simParams.omega.value;
       const R = prob.simParams.resistance.value;
       const L = prob.simParams.inductance.value;
-      const C = 20e-6; // 20 uF
+      const C = 20e-6;
       const xl = omega * L;
       const xc = 1 / (omega * C);
       const z = Math.sqrt(R * R + (xl - xc) * (xl - xc));
@@ -1207,12 +2185,10 @@ function startPhysicsCanvasLoop() {
       const phiDeg = (phiRad * 180) / Math.PI;
       const pf = Math.cos(phiRad);
 
-      // Draw Phasor / Impedance Vector Diagram on left & Resonance Bell Curve on right
       const cx = w * 0.3;
       const cy = h * 0.54;
       const scale = 0.55;
 
-      // Axes
       ctx.strokeStyle = 'rgba(255,255,255,0.18)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
@@ -1220,7 +2196,6 @@ function startPhysicsCanvasLoop() {
       ctx.moveTo(cx, cy - 95); ctx.lineTo(cx, cy + 95);
       ctx.stroke();
 
-      // R vector (horizontal)
       ctx.strokeStyle = '#34d399';
       ctx.lineWidth = 3;
       ctx.beginPath();
@@ -1230,7 +2205,6 @@ function startPhysicsCanvasLoop() {
       ctx.font = '600 11px "JetBrains Mono", monospace';
       ctx.fillText(`R=${R}Ω`, cx + R * scale * 0.4, cy + 16);
 
-      // X_L - X_C vector (vertical)
       const xNet = (xl - xc) * scale;
       ctx.strokeStyle = '#f43f5e';
       ctx.beginPath();
@@ -1238,7 +2212,6 @@ function startPhysicsCanvasLoop() {
       ctx.lineTo(cx + R * scale, cy - xNet);
       ctx.stroke();
 
-      // Z impedance hypotenuse
       ctx.strokeStyle = '#a855f7';
       ctx.beginPath();
       ctx.moveTo(cx, cy);
@@ -1256,16 +2229,14 @@ function startPhysicsCanvasLoop() {
         readoutEl.textContent = `X_L = ${xl.toFixed(1)}Ω | X_C = ${xc.toFixed(1)}Ω | Z = ${z.toFixed(1)}Ω | Pf = ${pf.toFixed(2)}`;
       }
     } else if (prob.id === 'ch5-optics-young') {
-      const lam = prob.simParams.wavelength.value; // nm
-      const d = prob.simParams.slitDist.value; // mm
-      const L = prob.simParams.screenDist.value; // m
-      const dy = (lam * 1e-9 * L) / (d * 1e-3) * 1e3; // mm
+      const lam = prob.simParams.wavelength.value;
+      const d = prob.simParams.slitDist.value;
+      const L = prob.simParams.screenDist.value;
+      const dy = (lam * 1e-9 * L) / (d * 1e-3) * 1e3;
 
-      // Convert wavelength nm to RGB color
       let hue = 270 - ((lam - 400) / 300) * 270;
       const waveColor = `hsl(${hue}, 90%, 60%)`;
 
-      // Draw double slit barrier on left and interference fringes on right screen
       const slitX = 95;
       const screenX = w - 65;
       ctx.strokeStyle = '#ffffff';
@@ -1276,7 +2247,6 @@ function startPhysicsCanvasLoop() {
       ctx.moveTo(slitX, h / 2 + 35); ctx.lineTo(slitX, h - 20);
       ctx.stroke();
 
-      // Interference intensity pattern on screen
       const fringePix = Math.max(12, dy * 8);
       for (let py = 25; py < h - 25; py += 2) {
         const distFromCenter = py - h / 2;
@@ -1286,7 +2256,6 @@ function startPhysicsCanvasLoop() {
         ctx.fillRect(screenX - 18, py, 26, 2.5);
       }
 
-      // Animated wavefront arcs from the two slits
       ctx.strokeStyle = waveColor;
       ctx.lineWidth = 1.2;
       const phaseShift = (state.simTime * 40) % 24;
@@ -1310,19 +2279,16 @@ function startPhysicsCanvasLoop() {
       const E_ev = 1240 / lam;
       const keMax = Math.max(0, E_ev - W);
 
-      // Draw cathode plate on left, collector anode on right
       ctx.fillStyle = '#64748b';
       ctx.fillRect(75, 55, 14, h - 110);
       ctx.fillRect(w - 85, 55, 14, h - 110);
 
-      // Incoming photon waves
       ctx.strokeStyle = E_ev >= W ? '#38bdf8' : '#f43f5e';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(20, 40); ctx.lineTo(75, h / 2);
       ctx.stroke();
 
-      // Emitted photoelectrons if E_ev >= W
       if (E_ev >= W) {
         ctx.fillStyle = '#34d399';
         for (let i = 0; i < 6; i++) {
@@ -1342,7 +2308,6 @@ function startPhysicsCanvasLoop() {
         readoutEl.textContent = `E_photon = ${E_ev.toFixed(2)} eV | W = ${W} eV | KE_max = ${keMax.toFixed(2)} eV | V_s = ${keMax.toFixed(2)} V`;
       }
     } else {
-      // Ch 8/9 Nuclear Physics
       const Z = prob.simParams.z.value;
       const A = Math.max(Z, prob.simParams.a.value);
       const R_fm = 1.2 * Math.cbrt(A);
@@ -1352,14 +2317,12 @@ function startPhysicsCanvasLoop() {
       const cy = h / 2;
       const drawR = Math.min(75, R_fm * 16);
 
-      // Outer nuclear radius halo
       ctx.strokeStyle = 'rgba(139, 152, 255, 0.45)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.arc(cx, cy, drawR + 8, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Draw nucleons (protons red, neutrons blue)
       for (let i = 0; i < Math.min(A, 40); i++) {
         const angle = i * 2.39996 + state.simTime * 0.4;
         const rad = Math.sqrt(i / Math.min(A, 40)) * (drawR - 6);
@@ -1383,7 +2346,7 @@ function startPhysicsCanvasLoop() {
 }
 
 // ============================================================================
-// 6. Custom Physics Formula Keyboard & Question Router
+// UPGRADE 5: Dynamic Custom Ministerial Problem Parser & Generator
 // ============================================================================
 function handleCustomProblemOrQuestion(rawInput) {
   const text = (rawInput || '').trim();
@@ -1392,9 +2355,37 @@ function handleCustomProblemOrQuestion(rawInput) {
   const inputBox = document.getElementById('custom-physics-input');
   if (inputBox) inputBox.value = text;
 
+  const nums = (text.match(/\d+(\.\d+)?/g) || []).map(Number);
   const lower = text.toLowerCase();
-  if (lower.includes('حث') || lower.includes('ملف') || lower.includes('induction') || lower.includes('faraday')) {
+
+  if (lower.includes('حث') || lower.includes('ملف') || lower.includes('induction') || lower.includes('l =')) {
     state.activeProblemIndex = 1;
+    if (nums.length >= 3) {
+      const L = nums.find((n) => n < 5) || 0.5;
+      const R = nums.find((n) => n >= 5 && n < 80) || 25;
+      const V = nums.find((n) => n >= 80 && n <= 500) || 150;
+      const pct = nums.find((n) => n > 10 && n < 100 && n !== R) || 80;
+      const prob = PHYSICS_PROBLEMS[1];
+      prob.title = `مسألة مخصصة (تم تحليل أرقامك): ملف L=${L}H و R=${R}Ω و V=${V}V`;
+      prob.prompt = text;
+      prob.simParams.inductance.value = L;
+      prob.simParams.resistance.value = R;
+      prob.simParams.vapp.value = V;
+      prob.simParams.pct.value = pct;
+      const didt0 = +(V / L).toFixed(2);
+      const iconst = +(V / R).toFixed(2);
+      const iinst = +((pct / 100) * iconst).toFixed(2);
+      const didtPct = +((V - iinst * R) / L).toFixed(2);
+      prob.steps[0].expectedAnswer = didt0;
+      prob.steps[0].formula = `${V} = 0 + ${L}\\frac{\\Delta I}{\\Delta t} \\implies \\frac{\\Delta I}{\\Delta t} = ${didt0}\\text{ A/s}`;
+      prob.steps[0].substitution = `\\Delta I / \\Delta t = ${didt0}\\text{ A/s}`;
+      prob.steps[1].expectedAnswer = iinst;
+      prob.steps[1].formula = `I_{\\text{const}} = \\frac{${V}}{${R}} = ${iconst}\\text{ A} \\implies I_{\\text{inst}} = ${iinst}\\text{ A}`;
+      prob.steps[1].substitution = `I_{\\text{inst}} = ${iinst}\\text{ A}`;
+      prob.steps[2].expectedAnswer = didtPct;
+      prob.steps[2].formula = `${V} = (${iinst}\\times ${R}) + ${L}\\frac{\\Delta I}{\\Delta t} \\implies \\frac{\\Delta I}{\\Delta t} = ${didtPct}\\text{ A/s}`;
+      prob.steps[2].substitution = `\\Delta I / \\Delta t = ${didtPct}\\text{ A/s}`;
+    }
   } else if (lower.includes('رنين') || lower.includes('متناوب') || lower.includes('ممانعة') || lower.includes('resonance')) {
     state.activeProblemIndex = 2;
   } else if (lower.includes('يونغ') || lower.includes('هدب') || lower.includes('تداخل') || lower.includes('young')) {
@@ -1405,20 +2396,39 @@ function handleCustomProblemOrQuestion(rawInput) {
     state.activeProblemIndex = 5;
   } else {
     state.activeProblemIndex = 0;
+    if (nums.length >= 3) {
+      const c1 = nums[0] || 6;
+      const c2 = nums[1] || 12;
+      const v = nums[2] || 30;
+      const k = nums[3] || 3;
+      const prob = PHYSICS_PROBLEMS[0];
+      const c1k = k * c1;
+      const ceq = c1k + c2;
+      const qt = ceq * v;
+      const pe1k = +(0.5 * c1k * v * v * 1e-3).toFixed(3);
+      prob.title = `مسألة مخصصة بأرقامك: C₁=${c1}μF, C₂=${c2}μF, ΔV=${v}V, k=${k}`;
+      prob.prompt = text;
+      prob.simParams.c1.value = Math.min(16, c1);
+      prob.simParams.c2.value = Math.min(16, c2);
+      prob.simParams.voltage.value = Math.min(48, v);
+      prob.simParams.k.value = Math.min(6, k);
+      prob.steps[0].expectedAnswer = ceq;
+      prob.steps[0].formula = `C_{1k} = ${k} \\times ${c1} = ${c1k}\\ \\mu\\text{F} \\implies C_{\\text{eq}} = ${c1k} + ${c2} = ${ceq}\\ \\mu\\text{F}`;
+      prob.steps[0].substitution = `C_{\\text{eq}} = ${ceq}\\ \\mu\\text{F}`;
+      prob.steps[1].expectedAnswer = qt;
+      prob.steps[1].formula = `Q_{\\text{total}} = C_{\\text{eq}} \\cdot \\Delta V = ${ceq} \\times ${v} = ${qt}\\ \\mu\\text{C}`;
+      prob.steps[1].substitution = `Q_{\\text{total}} = ${qt}\\ \\mu\\text{C}`;
+      prob.steps[2].expectedAnswer = pe1k;
+      prob.steps[2].formula = `PE_{1k} = \\frac{1}{2} (${c1k}\\times 10^{-6}) (${v})^2 = ${pe1k} \\times 10^{-3}\\text{ J}`;
+      prob.steps[2].substitution = `PE_{1k} = ${pe1k} \\times 10^{-3}\\text{ J}`;
+    }
   }
 
   state.unlockedStepIndex = 0;
   renderProblemSelector();
   renderSolverWorkspace();
   renderSimControls();
-
-  state.chatHistory.push({ role: 'user', text });
-  const prob = getActiveProblem();
-  state.chatHistory.push({
-    role: 'tutor',
-    text: `تم تحميل مسألة **${prob.title}** (${prob.category}) في مساحة الحل خطوة بخطوة مع تشغيل المحاكي التفاعلي الخاص بها!`
-  });
-  renderStudyModeWorkspace();
+  updateLabChallengeHUD();
 }
 
 function initMathKeyboardAndScanner() {
@@ -1433,13 +2443,15 @@ function initMathKeyboardAndScanner() {
     });
   });
 
-  const solveBtn = document.getElementById('btn-solve-custom');
-  if (solveBtn) {
-    solveBtn.addEventListener('click', () => {
-      const input = document.getElementById('custom-physics-input');
-      handleCustomProblemOrQuestion(input?.value || '');
-    });
-  }
+  document.getElementById('btn-sample-custom-prob')?.addEventListener('click', () => {
+    const sample = 'متسعتان 6 μF و 12 μF مربوطتان على التوازي مع بطارية 30 V وأدخل عازل ثابت عزله k = 3 في الأولى متصلة';
+    handleCustomProblemOrQuestion(sample);
+  });
+
+  document.getElementById('btn-solve-custom')?.addEventListener('click', () => {
+    const input = document.getElementById('custom-physics-input');
+    handleCustomProblemOrQuestion(input?.value || '');
+  });
 
   const scanInput = document.getElementById('scan-file-input');
   if (scanInput) {
@@ -1453,10 +2465,200 @@ function initMathKeyboardAndScanner() {
         setTimeout(() => {
           statusEl.textContent = `✓ تم استخراج السؤال الوزاري من "${file.name}" → تم فتح مسألة رنين التيار المتناوب (الفصل الثالث)`;
           handleCustomProblemOrQuestion('دائرة تيار متناوب في حالة رنين');
-        }, 800);
+        }, 700);
       }
     });
   }
+}
+
+// ============================================================================
+// UPGRADE 6: Parent Progress Report Card & Teacher Printable Worksheet Builder
+// ============================================================================
+function renderParentTeacherHub() {
+  const parentCard = document.getElementById('parent-report-card');
+  const teacherCard = document.getElementById('teacher-worksheet-builder');
+  const printArea = document.getElementById('printable-worksheet-area');
+  if (!parentCard || !teacherCard) return;
+
+  const avgMastery = Math.round(
+    IRAQI_SYLLABUS_CHAPTERS.reduce((acc, c) => acc + c.masteryPct, 0) / IRAQI_SYLLABUS_CHAPTERS.length
+  );
+  const solvedCount = Object.keys(state.completedSteps).length;
+  const streakCount = state.streakDays.filter(Boolean).length;
+
+  parentCard.innerHTML = `
+    <div>
+      <div class="flex items-center justify-between mb-3">
+        <span class="font-mono text-xs uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
+          بطاقة طمأنة ولي الأمر · Parent View
+        </span>
+        <span class="font-mono text-xs text-[#8a9bad]">تحديث حي</span>
+      </div>
+      <h3 class="text-xl lg:text-2xl font-bold text-white mb-2">تقرير التقدم الأسبوعي لطالب السادس العلمي</h3>
+      <p class="text-xs sm:text-sm text-[#8a9bad] mb-5">
+        ملخص واضح للأهل يبين مدى التزام الطالب اليومي وجاهزيته للامتحان الوزاري في مادة الفيزياء:
+      </p>
+
+      <div class="grid grid-cols-3 gap-3 mb-5 text-center">
+        <div class="rounded-2xl bg-black/50 border border-white/10 p-3.5">
+          <div class="font-mono text-xl font-bold text-emerald-400">${avgMastery}%</div>
+          <div class="text-[11px] text-[#8a9bad] mt-1">إتقان المنهج</div>
+        </div>
+        <div class="rounded-2xl bg-black/50 border border-white/10 p-3.5">
+          <div class="font-mono text-xl font-bold text-amber-300">🔥 ${streakCount} أيام</div>
+          <div class="text-[11px] text-[#8a9bad] mt-1">الالتزام الأسبوعي</div>
+        </div>
+        <div class="rounded-2xl bg-black/50 border border-white/10 p-3.5">
+          <div class="font-mono text-xl font-bold text-[#c9cfff]">${state.xp} XP</div>
+          <div class="text-[11px] text-[#8a9bad] mt-1">نقاط التدريب (${solvedCount} خطوة)</div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white/[0.03] border border-white/10 p-4 text-xs text-white/90 space-y-1.5">
+        <div>✅ <strong>أقوى الفصول حالياً:</strong> الفصل الأول (المتسعات 82%)، الفصل الرابع (الموجات 79%).</div>
+        <div>🎯 <strong>خطة الأسبوع القادم:</strong> التركيز على الظاهرة الكهروضوئية (الفصل 6) ورنين التوالي (الفصل 3).</div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2.5">
+      <button type="button" id="btn-share-parent-report"
+        class="home-ramp-fill flex-1 py-3 rounded-2xl text-xs sm:text-sm font-semibold text-white cursor-pointer">
+        📲 نسخ ومشاركة التقرير مع ولي الأمر (واتساب / تيليجرام)
+      </button>
+      <span id="parent-copy-status" class="hidden w-full text-center font-mono text-xs text-emerald-400"></span>
+    </div>
+  `;
+
+  parentCard.querySelector('#btn-share-parent-report')?.addEventListener('click', () => {
+    const reportText = `📊 تقرير Astra AI لفيزياء السادس العلمي:\n• نسبة إتقان المنهج: ${avgMastery}%\n• سلسلة الالتزام: ${streakCount} أيام متتالية 🔥\n• نقاط الخبرة: ${state.xp} XP\n• أقوى الفصول: المتسعات (82%) والحث الكهرومغناطيسي (74%).`;
+    navigator.clipboard?.writeText(reportText).catch(() => {});
+    const st = parentCard.querySelector('#parent-copy-status');
+    if (st) {
+      st.classList.remove('hidden');
+      st.textContent = '✓ تم نسخ بطاقة التقرير! يمكنك لصقها الآن في واتساب أو تيليجرام.';
+    }
+  });
+
+  teacherCard.innerHTML = `
+    <div>
+      <div class="flex items-center justify-between mb-3">
+        <span class="font-mono text-xs uppercase text-[#8b98ff] bg-[#4353f3]/15 border border-[#5b6bff]/40 px-3 py-1 rounded-full">
+          منصة المدرس · Teacher Worksheet Builder
+        </span>
+        <span class="font-mono text-xs text-amber-300">PDF / Print Ready</span>
+      </div>
+      <h3 class="text-xl lg:text-2xl font-bold text-white mb-2">توليد ملزمة فصل أو ورقة امتحان قابلة للطباعة</h3>
+      <p class="text-xs sm:text-sm text-[#8a9bad] mb-4">
+        اختر الفصل وحدد المحتوى المطلوب لتوليد ملخص قوانين وملاحظات ذهبية وأسئلة وزارية جاهزة للطباعة أو الحفظ كـ PDF:
+      </p>
+
+      <div class="space-y-3 mb-5">
+        <div>
+          <label class="block text-xs text-[#8a9bad] mb-1">اختر الفصل المطلوب تصديره:</label>
+          <select id="teacher-ch-select" class="w-full rounded-xl bg-black/70 border border-white/15 px-3.5 py-2.5 text-xs sm:text-sm text-white">
+            ${IRAQI_SYLLABUS_CHAPTERS.map((c) => `<option value="${c.id}" ${c.id === state.worksheetChapterId ? 'selected' : ''}>${c.titleAr} (${c.weight})</option>`).join('')}
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+          <label class="flex items-center gap-2 p-2.5 rounded-xl bg-black/40 border border-white/10 cursor-pointer">
+            <input type="checkbox" id="chk-ws-eq" ${state.worksheetIncludeEquations ? 'checked' : ''} class="accent-[#4353f3]" />
+            <span>القوانين والوحدات</span>
+          </label>
+          <label class="flex items-center gap-2 p-2.5 rounded-xl bg-black/40 border border-white/10 cursor-pointer">
+            <input type="checkbox" id="chk-ws-golden" ${state.worksheetIncludeGolden ? 'checked' : ''} class="accent-[#4353f3]" />
+            <span>الملاحظات الذهبية</span>
+          </label>
+          <label class="flex items-center gap-2 p-2.5 rounded-xl bg-black/40 border border-white/10 cursor-pointer">
+            <input type="checkbox" id="chk-ws-prob" ${state.worksheetIncludeProblems ? 'checked' : ''} class="accent-[#4353f3]" />
+            <span>أسئلة وزارية + الحل</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2.5">
+      <button type="button" id="btn-preview-worksheet"
+        class="px-4 py-3 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-semibold text-[#c9cfff] cursor-pointer">
+        👁️ معاينة الملزمة / الورقة
+      </button>
+      <button type="button" id="btn-print-worksheet"
+        class="home-ramp-fill flex-1 py-3 rounded-2xl text-xs sm:text-sm font-semibold text-white cursor-pointer">
+        🖨️ طباعة أو حفظ كملف PDF
+      </button>
+    </div>
+  `;
+
+  const updateWorksheetPreview = (show) => {
+    const ch = IRAQI_SYLLABUS_CHAPTERS.find((c) => c.id === state.worksheetChapterId) || IRAQI_SYLLABUS_CHAPTERS[0];
+    if (!printArea) return;
+    if (show) printArea.classList.remove('hidden');
+    printArea.innerHTML = `
+      <div class="border-b-2 border-black pb-4 mb-5 flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold">ملزمة وورقة عمل فيزياء السادس العلمي — ${ch.titleAr}</h2>
+          <p class="text-sm text-gray-700">${ch.summary}</p>
+        </div>
+        <div class="text-left font-mono text-xs">
+          <div>Astra AI Physics Iraq</div>
+          <div>الثقل الوزاري: ${ch.weight}</div>
+        </div>
+      </div>
+      ${
+        state.worksheetIncludeEquations
+          ? `<div class="mb-5">
+              <h3 class="text-lg font-bold mb-2">أولاً: القوانين الرياضية المعتمدة وزارياً</h3>
+              <ul class="list-disc pr-5 space-y-1.5 text-sm">
+                ${ch.equations.map((e) => `<li><strong>${e.name}:</strong> <span class="font-mono">${e.latex}</span> (${e.vars})</li>`).join('')}
+              </ul>
+            </div>`
+          : ''
+      }
+      ${
+        state.worksheetIncludeGolden
+          ? `<div class="mb-5">
+              <h3 class="text-lg font-bold mb-2">ثانياً: الملاحظات الذهبية ومفاتيح الحل</h3>
+              <ul class="list-disc pr-5 space-y-1.5 text-sm">
+                ${ch.goldenRules.map((g) => `<li>${g}</li>`).join('')}
+              </ul>
+            </div>`
+          : ''
+      }
+      ${
+        state.worksheetIncludeProblems
+          ? `<div>
+              <h3 class="text-lg font-bold mb-2">ثالثاً: أسئلة الامتحان الوزاري المختارة مع الجواب النموذجي</h3>
+              <div class="space-y-2 text-sm">
+                ${WRITTEN_EXAM_PAPER.slice(0, 3).map((q) => `<div class="p-3 border border-gray-300 rounded-lg"><strong>${q.qNum}:</strong> ${q.text}<br/><em>الجواب النموذجي:</em> ${q.solution}</div>`).join('')}
+              </div>
+            </div>`
+          : ''
+      }
+    `;
+  };
+
+  teacherCard.querySelector('#teacher-ch-select')?.addEventListener('change', (e) => {
+    state.worksheetChapterId = e.target.value;
+    updateWorksheetPreview(!printArea.classList.contains('hidden'));
+  });
+  teacherCard.querySelector('#chk-ws-eq')?.addEventListener('change', (e) => {
+    state.worksheetIncludeEquations = e.target.checked;
+  });
+  teacherCard.querySelector('#chk-ws-golden')?.addEventListener('change', (e) => {
+    state.worksheetIncludeGolden = e.target.checked;
+  });
+  teacherCard.querySelector('#chk-ws-prob')?.addEventListener('change', (e) => {
+    state.worksheetIncludeProblems = e.target.checked;
+  });
+  teacherCard.querySelector('#btn-preview-worksheet')?.addEventListener('click', () => {
+    const isHidden = printArea?.classList.contains('hidden');
+    updateWorksheetPreview(isHidden);
+    if (!isHidden) printArea?.classList.add('hidden');
+  });
+  teacherCard.querySelector('#btn-print-worksheet')?.addEventListener('click', () => {
+    updateWorksheetPreview(true);
+    window.print();
+  });
 }
 
 // ============================================================================
@@ -1492,7 +2694,7 @@ function renderStudyModeWorkspace() {
         <div class="flex items-center justify-between gap-2 mt-3">
           <button type="button" id="btn-fc-flip" class="px-3.5 py-2 rounded-xl bg-white/10 text-xs font-semibold text-white hover:bg-white/15 cursor-pointer">اقلب البطاقة</button>
           <div class="flex gap-2">
-            <button type="button" id="btn-fc-hard" class="px-3.5 py-2 rounded-xl bg-amber-500/20 border border-amber-400/40 text-xs font-semibold text-amber-300 cursor-pointer">أعدها لاحقاً</button>
+            <button type="button" id="btn-fc-hard" class="px-3.5 py-2 rounded-xl bg-amber-500/20 border border-amber-400/40 text-xs font-semibold text-amber-300 cursor-pointer">أضف لبنك المراجعة</button>
             <button type="button" id="btn-fc-easy" class="home-ramp-fill px-4 py-2 rounded-xl text-xs font-semibold text-white cursor-pointer">حفظتها (+15 XP)</button>
           </div>
         </div>
@@ -1508,6 +2710,7 @@ function renderStudyModeWorkspace() {
       renderStudyModeWorkspace();
     });
     container.querySelector('#btn-fc-hard')?.addEventListener('click', () => {
+      addMistakeToBank(card.topic, `${card.front} — الجواب: ${card.back}`);
       state.flashcardIndex++;
       state.flashcardFlipped = false;
       renderStudyModeWorkspace();
@@ -1545,11 +2748,13 @@ function renderStudyModeWorkspace() {
     container.querySelector('#btn-tf-true')?.addEventListener('click', () => {
       state.tfAnswered = true;
       if (item.answer === true) { state.xp += 20; saveProgress(); }
+      else addMistakeToBank('اختبار صح/خطأ', item.explanation);
       renderStudyModeWorkspace();
     });
     container.querySelector('#btn-tf-false')?.addEventListener('click', () => {
       state.tfAnswered = false;
       if (item.answer === false) { state.xp += 20; saveProgress(); }
+      else addMistakeToBank('اختبار صح/خطأ', item.explanation);
       renderStudyModeWorkspace();
     });
     container.querySelector('#btn-tf-next')?.addEventListener('click', () => {
@@ -1640,6 +2845,7 @@ function renderStreakDays() {
       state.streakDays[idx] = !state.streakDays[idx];
       saveProgress();
       renderStreakDays();
+      renderParentTeacherHub();
     });
   });
 }
@@ -1690,24 +2896,87 @@ function renderFaqSection() {
 // ============================================================================
 document.addEventListener('DOMContentLoaded', () => {
   saveProgress();
+  renderExamPrepPlanner();
   renderSyllabusAtlas();
   renderTutoringMethods();
-  initFlipCards();
   renderProblemSelector();
   renderSolverWorkspace();
   renderSimControls();
+  updateLabChallengeHUD();
   startPhysicsCanvasLoop();
   initMathKeyboardAndScanner();
+  renderMockExamsSection();
+  renderKnowledgeGapAndMistakes();
   renderStudyModeWorkspace();
   renderStreakDays();
+  renderParentTeacherHub();
   renderFaqSection();
 
+  // Planner Upload & Regenerate
+  document.getElementById('planner-upload-input')?.addEventListener('change', (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const st = document.getElementById('planner-upload-status');
+    if (st) {
+      st.classList.remove('hidden');
+      st.textContent = `✓ تم ربط "${file.name}" بخطة المراجعة الوزارية وتحديث المهام (+20 XP)`;
+      state.xp += 20;
+      saveProgress();
+    }
+  });
+  document.getElementById('btn-regenerate-plan')?.addEventListener('click', () => {
+    state.plannerMissions.forEach((m, i) => { m.done = i === 0; });
+    renderExamPrepPlanner();
+  });
+
+  // Lab HUD Controls
+  document.getElementById('btn-lab-mode-explore')?.addEventListener('click', () => {
+    state.labMode = 'explore';
+    updateLabChallengeHUD();
+  });
+  document.getElementById('btn-lab-mode-challenge')?.addEventListener('click', () => {
+    state.labMode = 'challenge';
+    updateLabChallengeHUD();
+  });
+  document.getElementById('btn-sim-speed')?.addEventListener('click', (e) => {
+    state.simSpeed = state.simSpeed === 1 ? 0.25 : state.simSpeed === 0.25 ? 2 : 1;
+    e.currentTarget.textContent = `${state.simSpeed}x`;
+  });
   document.getElementById('btn-sim-play')?.addEventListener('click', (e) => {
     state.simRunning = !state.simRunning;
-    e.currentTarget.textContent = state.simRunning ? '⏸ إيقاف مؤقت' : '▶ تشغيل';
+    e.currentTarget.textContent = state.simRunning ? '⏸' : '▶';
   });
   document.getElementById('btn-sim-reset')?.addEventListener('click', () => {
     state.simTime = 0;
+  });
+
+  // Contextual "Ask Tutor About Current Simulation"
+  document.getElementById('btn-ask-tutor-sim')?.addEventListener('click', () => {
+    const prob = getActiveProblem();
+    const readout = document.getElementById('sim-live-telemetry')?.textContent || '';
+    const expEl = document.getElementById('sim-tutor-explanation');
+    if (expEl) {
+      expEl.classList.remove('hidden');
+      expEl.innerHTML = `<strong>🤖 تفسير المدرب لقراءات المختبر الحالية (${prob.badge}):</strong><br/>عند القيم المضبوطة حالياً (<span class="font-mono">${readout}</span>)، نلاحظ تطبيق القانون <span class="font-mono">${prob.steps[0].substitution}</span> مباشرة. جرب تفعيل وضع <strong>"🎯 تحدي المختبر"</strong> أعلى المحاكي لاختبار قدرتك على الوصول للقيمة المستهدفة!`;
+    }
+  });
+
+  // Mock Exam Tabs
+  document.getElementById('tab-btn-oral')?.addEventListener('click', () => {
+    state.mockTab = 'oral';
+    renderMockExamsSection();
+  });
+  document.getElementById('tab-btn-written')?.addEventListener('click', () => {
+    state.mockTab = 'written';
+    renderMockExamsSection();
+  });
+
+  // Add Sample Mistake
+  document.getElementById('btn-add-sample-mistake')?.addEventListener('click', () => {
+    const customNote = prompt('اكتب الملاحظة أو القانون أو التعليل الذي تريد إضافته لبنك المراجعة المتباعدة:');
+    if (customNote && customNote.trim()) {
+      addMistakeToBank('ملاحظة مخصصة للطالب', customNote.trim());
+    }
   });
 
   document.querySelectorAll('[data-study-mode]').forEach((pill) => {
@@ -1722,20 +2991,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tabBtn.addEventListener('click', () => {
       state.faqTab = tabBtn.getAttribute('data-faq-tab');
       renderFaqSection();
-    });
-  });
-
-  document.querySelectorAll('[data-exam-resource]').forEach((card) => {
-    card.addEventListener('click', () => {
-      const label = card.getAttribute('data-exam-resource');
-      card.classList.toggle('border-[#5b6bff]');
-      card.classList.toggle('bg-[#4353f3]/15');
-      const status = document.getElementById('exam-collector-status');
-      if (status) {
-        status.textContent = `✓ تمت إضافة "${label}" إلى خطة مراجعة الامتحان الوزاري لفيزياء السادس العلمي (+10 XP)`;
-        state.xp += 10;
-        saveProgress();
-      }
     });
   });
 
